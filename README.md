@@ -155,7 +155,7 @@ The website is fully responsive with breakpoints:
 
 ## 📄 License
 
-© 2024 Sonint Technology. All rights reserved.
+© 2025 Sonint Technology. All rights reserved.
 
 ---
 

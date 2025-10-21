@@ -12,27 +12,27 @@ export function TestimonialsCombined() {
   const testimonials = [
     {
       quote: "Sonint delivered our web application faster than expected. Their attention to detail and clean code practices impressed our entire team.",
-      authorName: "Rajesh Kumar",
-      authorRole: "Founder at LocalBiz Solutions",
-      avatarSrc: "/DavidPark.png"
+      authorName: "Harsh Agrawal",
+      authorRole: "Founder Tip Top Dresses",
+      avatarSrc: "/Testimonial-user/harsh-agrawal.jpg"
     },
     {
       quote: "Working with Sonint was a great experience. They understood our requirements perfectly and delivered exactly what we needed for our growing business.",
-      authorName: "Priya Sharma",
-      authorRole: "CEO at GrowthTech",
-      avatarSrc: "/MonicaKurt.png"
+      authorName: "Shivam",
+      authorRole: "Founder & CEO Sir Musiz Studio",
+      avatarSrc: "/Testimonial-user/shivam-sirmusiz.webp"
     },
     {
       quote: "The team's expertise in modern technologies and their commitment to quality made our project a huge success. Highly recommended!",
-      authorName: "Michael Chen",
-      authorRole: "CTO at TechStart",
-      avatarSrc: "/DavidPark.png"
+      authorName: "Priya Sharma",
+      authorRole: "CFO at Ground work",
+      avatarSrc: "/Testimonial-user/fml-user.jpg"
     },
     {
       quote: "Excellent communication and delivery. They turned our complex requirements into a simple, elegant solution that our users love.",
-      authorName: "Sarah Johnson",
-      authorRole: "Product Manager at InnovateCorp",
-      avatarSrc: "/MonicaKurt.png"
+      authorName: "Ck Solution",
+      authorRole: "Founder CK Solutions",
+      avatarSrc: "/Testimonial-user/user-testimonial.webp"
     }
   ];
 
@@ -79,7 +79,7 @@ export function TestimonialsCombined() {
                     <Card className="bg-background rounded-xl border shadow-sm mx-auto w-full max-w-lg sm:max-w-xl md:max-w-2xl">
                       <CardContent className="p-4 sm:p-5 md:p-6 lg:p-8">
                         <div className="flex flex-col gap-4 sm:gap-5 md:gap-6 text-center">
-                          <blockquote className="text-foreground text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed">
+                          <blockquote className="text-foreground text-sm sm:text-base md:text-lg lg:text-lg leading-relaxed">
                             "{testimonial.quote}"
                           </blockquote>
 

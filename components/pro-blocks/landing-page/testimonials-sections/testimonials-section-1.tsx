@@ -10,10 +10,10 @@ interface TestimonialsSection1Props {
 }
 
 export default function TestimonialsSection1({
-  quote = "MindSpace is like having a photographic memory for every meeting. We reduced the follow-up emails by 80%.",
-  authorName = "David Park",
-  authorRole = "Engineering Manager at TechCorp",
-  avatarSrc = "/DavidPark.png",
+  quote = "Sonint delivered our web application faster than expected. Their attention to detail and clean code practices impressed our entire team.",
+  authorName = "Harsh Agrawal",
+  authorRole = "Founder Tip Top Dresses",
+  avatarSrc = "/Testimonial-user/harsh-agrawal.jpg",
 }: TestimonialsSection1Props) {
   return (
     <section

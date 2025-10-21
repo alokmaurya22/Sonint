@@ -82,7 +82,7 @@ export function Footer1() {
         <div className="flex w-full flex-col-reverse items-center gap-4 sm:gap-6 md:gap-8 lg:gap-6 text-sm lg:flex-row lg:justify-between">
           {/* Copyright Text */}
           <p className="text-muted-foreground text-center lg:text-left text-xs sm:text-sm">
-            © 2024 Sonint. All rights reserved. Remote-first software engineering worldwide.
+            © 2025 Sonint. All rights reserved. Remote-first software engineering worldwide.
           </p>
 
           {/* Social & Legal Navigation */}
@@ -91,21 +91,21 @@ export function Footer1() {
             aria-label="Social and legal links"
           >
             <Link
-              href="https://github.com/sonint-tech"
-              target="_blank"
-              className="text-muted-foreground hover:text-foreground transition-colors"
-            >
-              GitHub
-            </Link>
-            <Link
-              href="https://linkedin.com/company/sonint-technology"
+              href="https://linkedin.com/company/sonint"
               target="_blank"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               LinkedIn
             </Link>
             <Link
-              href="mailto:hello@sonint.tech"
+              href="#"
+              target="_blank"
+              className="text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Twitter
+            </Link>
+            <Link
+              href="mailto:sonint@zohomail.in"
               className="text-muted-foreground hover:text-foreground transition-colors"
             >
               Email Us
