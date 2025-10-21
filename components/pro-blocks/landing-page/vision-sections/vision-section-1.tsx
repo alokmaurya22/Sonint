@@ -121,10 +121,10 @@ export function VisionSection1() {
                       <video
                         ref={videoRef}
                         className="w-full h-full object-cover"
-                        poster="/Video/Sonint_Technology_intro.jpg"
                         onPlay={() => setIsPlaying(true)}
                         onPause={() => setIsPlaying(false)}
-                        preload="metadata"
+                        preload="none"
+                        playsInline
                       >
                         <source src="/Video/Sonint_Technology_intro.mp4" type="video/mp4" />
                         Your browser does not support the video tag.
@@ -244,8 +244,6 @@ export function VisionSection1() {
                   </CardContent>
                 </Card>
               </div>
-
-
             </div>
           </div>
         </div>
