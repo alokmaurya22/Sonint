@@ -35,52 +35,7 @@ const nextConfig = {
       },
     ]
   },
-  // Redirects for SEO and domain management
-  async redirects() {
-    return [
-      // Domain redirects - redirect alternative domains to primary
-      // Note: These work when deployed with proper domain configuration
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'sonint.io',
-          },
-        ],
-        destination: 'https://sonint.io/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'sonint.in',
-          },
-        ],
-        destination: 'https://sonint.io/:path*',
-        permanent: true,
-      },
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'sonint.vercel.app',
-          },
-        ],
-        destination: 'https://sonint.vercel.app/:path*',
-        permanent: true,
-      },
-      // Add other SEO redirects as needed
-      // {
-      //   source: '/old-page',
-      //   destination: '/new-page',
-      //   permanent: true,
-      // },
-    ]
-  },
+
 }
 
 export default nextConfig
