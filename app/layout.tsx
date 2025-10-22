@@ -9,10 +9,18 @@ const onest = Onest({
 });
 
 export const metadata: Metadata = {
-  title: "Sonint Technology - Crafting Digital Precision",
+  title: "Sonint Technology",
   description:
     "Modern software engineering company specializing in high-performance web platforms, custom ERP systems, cloud infrastructure, and AI integration solutions.",
-    generator: 'Sonint Technology'
+  generator: 'Sonint Technology',
+  icons: {
+    icon: [
+      { url: '/favicon_io/favicon.ico' },
+      { url: '/favicon_io/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicon_io/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+    ],
+  },
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
