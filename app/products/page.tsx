@@ -1,5 +1,4 @@
-"use client";
-
+import { Metadata } from "next";
 import { LpNavbar1 } from "@/components/pro-blocks/landing-page/lp-navbars/lp-navbar-1";
 import { Footer1 } from "@/components/pro-blocks/landing-page/footers/footer-1";
 import { Button } from "@/components/ui/button";
@@ -7,6 +6,90 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Star, Users, Zap, ArrowRight, ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { ScrollToTop } from "@/components/scroll-to-top";
+
+export const metadata: Metadata = {
+  title: "Business Software Products | ERP, CRM & Analytics Solutions",
+  description: "Ready-to-deploy business software by Sonint Technology. Project management, CRM systems, custom ERP solutions & analytics dashboards. Built in India, trusted globally.",
+  keywords: [
+    // Product-Specific Keywords
+    "business software products",
+    "project management software",
+    "CRM software solutions",
+    "custom ERP systems",
+    "business analytics dashboard",
+    "workflow automation tools",
+    "inventory management software",
+    "team collaboration tools",
+    "business intelligence platform",
+    
+    // Enhanced Product Keywords
+    "enterprise software solutions",
+    "business process automation software",
+    "web portal design and development",
+    "AI and automation software",
+    "cloud-native software development",
+    "custom software solutions",
+    
+    // Brand + Product Keywords
+    "Sonint Technology products",
+    "Indian software products",
+    "startup software solutions",
+    "ready-to-use business software",
+    "scalable enterprise applications"
+  ],
+  openGraph: {
+    title: "Business Software Products | ERP, CRM & Analytics Solutions",
+    description: "Ready-to-deploy business software by Sonint Technology. Project management, CRM systems, custom ERP solutions & analytics dashboards. Built in India, trusted globally.",
+    url: "https://sonint.tech/products",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Sonint Technology Software Products"
+      }
+    ]
+  },
+  alternates: {
+    canonical: "https://sonint.tech/products"
+  }
+};
+
+// Structured data for products page
+const productsJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Software Products & Solutions',
+  description: 'Comprehensive business software products and solutions by Sonint Technology',
+  url: 'https://sonint.tech/products',
+  mainEntity: {
+    '@type': 'ItemList',
+    name: 'Business Software Products',
+    itemListElement: [
+      {
+        '@type': 'SoftwareApplication',
+        name: 'TaskFlow Pro',
+        description: 'Complete project management solution with team collaboration and time tracking',
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web Browser'
+      },
+      {
+        '@type': 'SoftwareApplication',
+        name: 'InvoiceGenius',
+        description: 'Smart invoicing and billing software for automated financial workflows',
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web Browser'
+      },
+      {
+        '@type': 'SoftwareApplication',
+        name: 'CRM Master',
+        description: 'Customer relationship management system for lead tracking and sales',
+        applicationCategory: 'BusinessApplication',
+        operatingSystem: 'Web Browser'
+      }
+    ]
+  }
+};
 
 export default function ProductsPage() {
   const products = [
@@ -67,8 +150,13 @@ export default function ProductsPage() {
   ];
 
   return (
-    <main>
-      <LpNavbar1 />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productsJsonLd) }}
+      />
+      <main>
+        <LpNavbar1 />
       
       {/* Hero Section */}
       <section className="bg-secondary section-padding-y">
@@ -181,8 +269,9 @@ export default function ProductsPage() {
         </div>
       </section>
 
-      <Footer1 />
-      <ScrollToTop />
-    </main>
+        <Footer1 />
+        <ScrollToTop />
+      </main>
+    </>
   );
 }

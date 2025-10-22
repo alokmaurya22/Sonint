@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import { LpNavbar1 } from "@/components/pro-blocks/landing-page/lp-navbars/lp-navbar-1";
 import { Footer1 } from "@/components/pro-blocks/landing-page/footers/footer-1";
 import { Button } from "@/components/ui/button";
@@ -7,10 +8,101 @@ import { Code, Users, Zap, Globe } from "lucide-react";
 import Link from "next/link";
 import { ScrollToTop } from "@/components/scroll-to-top";
 
+export const metadata: Metadata = {
+  title: "Software Developer Jobs India | React, Spring Boot & DevOps Careers",
+  description: "Join Sonint Technology's remote-first team! Hiring React developers, Spring Boot engineers & DevOps specialists. Build global software from India's heartland. Apply now!",
+  keywords: [
+    // Job-Specific Keywords
+    "software developer jobs",
+    "React developer careers",
+    "Spring Boot developer jobs",
+    "remote software engineering jobs",
+    "startup developer positions",
+    "full stack developer careers",
+    "DevOps engineer jobs",
+    "software architect positions",
+    "remote work opportunities",
+    
+    // Enhanced Career Keywords
+    "React JS developer jobs India",
+    "Next JS developer careers",
+    "Java Spring Boot jobs",
+    "full stack development careers",
+    "UI/UX designer jobs",
+    "DevOps and CI/CD engineer positions",
+    "software engineering internships",
+    
+    // Location + Career Keywords
+    "tech startup careers India",
+    "software jobs Uttar Pradesh",
+    "remote developer jobs India",
+    "tier-2 city tech jobs",
+    "Sonbhadra tech careers",
+    "Indian software startup jobs",
+    
+    // Company Culture Keywords
+    "empowering Indian developers",
+    "innovation in software engineering",
+    "modern software engineering firm careers",
+    "startup software studio jobs",
+    "software development team",
+    "programming jobs remote"
+  ],
+  openGraph: {
+    title: "Software Developer Jobs India | React, Spring Boot & DevOps Careers",
+    description: "Join Sonint Technology's remote-first team! Hiring React developers, Spring Boot engineers & DevOps specialists. Build global software from India's heartland. Apply now!",
+    url: "https://sonint.tech/careers",
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "Careers at Sonint Technology"
+      }
+    ]
+  },
+  alternates: {
+    canonical: "https://sonint.tech/careers"
+  }
+};
+
+// Structured data for careers page
+const careersJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Careers at Sonint Technology',
+  description: 'Join our growing remote development team with opportunities for React developers, Spring Boot engineers, and DevOps specialists.',
+  url: 'https://sonint.tech/careers',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'Sonint Technology',
+    hiringOrganization: {
+      '@type': 'Organization',
+      name: 'Sonint Technology',
+      sameAs: 'https://sonint.tech'
+    },
+    jobLocation: {
+      '@type': 'Place',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Remote',
+        addressCountry: 'Worldwide'
+      }
+    },
+    employmentType: ['FULL_TIME', 'CONTRACTOR'],
+    workHours: 'Flexible'
+  }
+};
+
 export default function CareersPage() {
   return (
-    <main>
-      <LpNavbar1 />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(careersJsonLd) }}
+      />
+      <main>
+        <LpNavbar1 />
       
       {/* Hero Section */}
       <section className="bg-secondary section-padding-y">
@@ -139,8 +231,9 @@ export default function CareersPage() {
         </div>
       </section>
 
-      <Footer1 />
-      <ScrollToTop />
-    </main>
+        <Footer1 />
+        <ScrollToTop />
+      </main>
+    </>
   );
 }

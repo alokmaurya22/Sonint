@@ -16,10 +16,10 @@ export function BentoGrid6() {
           </div>
           {/* Main Heading */}
           <h2 className="heading-lg">
-            What We Build
+            Full Stack Development Services & Enterprise Software Solutions
           </h2>
           <p className="text-muted-foreground">
-            From concept to deployment, we create digital solutions that drive business growth.
+            From concept to deployment, we deliver cutting-edge React JS applications, Spring Boot APIs, custom ERP development, business process automation software, and cloud-native infrastructure solutions that drive digital transformation for businesses across India and globally.
           </p>
         </div>
 
@@ -43,10 +43,10 @@ export function BentoGrid6() {
             />
             <CardContent className="flex flex-col gap-2 p-6">
               <h3 className="text-foreground text-lg font-semibold">
-                Web Development
+                React & Next.js Web Development
               </h3>
               <p className="text-muted-foreground">
-                Fast, responsive websites and web applications using modern technologies
+                High-performance, SEO-optimized web applications using React, Next.js, TypeScript, and modern frontend technologies for exceptional user experiences
               </p>
             </CardContent>
           </Card>
@@ -61,10 +61,10 @@ export function BentoGrid6() {
             />
             <CardContent className="flex flex-col gap-2 p-6">
               <h3 className="text-foreground text-lg font-semibold">
-                Cloud Infrastructure
+                Cloud Infrastructure & DevOps
               </h3>
               <p className="text-muted-foreground">
-                Deploy your applications on cloud platforms with proper setup and monitoring
+                Scalable cloud deployment on AWS, Azure, and GCP with CI/CD pipelines, monitoring, and automated infrastructure management for reliable applications
               </p>
             </CardContent>
           </Card>
@@ -79,10 +79,10 @@ export function BentoGrid6() {
             />
             <CardContent className="flex flex-col gap-2 p-6">
               <h3 className="text-foreground text-lg font-semibold">
-                Mobile Applications
+                Cross-Platform Mobile Apps
               </h3>
               <p className="text-muted-foreground">
-                Mobile apps that work on both Android and iOS platforms
+                Native-quality mobile applications for Android and iOS using React Native, Flutter, and progressive web app technologies for maximum reach
               </p>
             </CardContent>
           </Card>
@@ -104,10 +104,10 @@ export function BentoGrid6() {
             />
             <CardContent className="flex flex-col gap-2 p-6">
               <h3 className="text-foreground text-lg font-semibold">
-                Custom ERP & Automation
+                Custom ERP & Business Automation
               </h3>
               <p className="text-muted-foreground">
-                Custom software to automate your business processes and improve efficiency
+                Tailored ERP systems, workflow automation, and business intelligence solutions using Spring Boot, microservices, and AI to streamline operations and boost productivity
               </p>
             </CardContent>
           </Card>

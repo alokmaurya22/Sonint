@@ -25,9 +25,9 @@ export function HeroSection2() {
               Modern Software Solutions for Growing Businesses
             </h1>
             {/* Description */}
-            <p className="text-muted-foreground text-base lg:text-lg">
-              We work remotely with talented software engineers worldwide to build web applications, automation tools, and digital solutions that help businesses grow
-            </p>
+            <p className="text-muted-foreground text-base lg:text-lg"> 
+              SonintTechnologybuilds custom software, AI automation, and cloud native solutions from India for global clients. Rooted in India, engineered for the world.
+             </p>
           </div>
 
           {/* Feature List */}
