@@ -70,7 +70,7 @@ const nextConfig = {
             value: 'sonint.vercel.app',
           },
         ],
-        destination: 'https://sonint.io/:path*',
+        destination: 'https://sonint.vercel.app/:path*',
         permanent: true,
       },
       // Add other SEO redirects as needed
