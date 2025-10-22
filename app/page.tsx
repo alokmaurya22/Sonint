@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Custom Software Development & AI Automation | Sonint Technology",
     description: "Transform your business with Sonint Technology's custom software solutions. We build React applications, Spring Boot APIs, ERP systems & AI automation. From India's heartland to global excellence.",
-    url: "https://sonint.tech",
+    url: "https://sonint.io",
     images: [
       {
         url: "/og.png",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     ]
   },
   alternates: {
-    canonical: "https://sonint.tech"
+    canonical: "https://sonint.io"
   }
 };
 
@@ -86,7 +86,7 @@ const homepageJsonLd = {
   '@type': 'WebPage',
   name: 'Sonint Technology - Modern Software Development',
   description: 'Leading software development company specializing in React, Spring Boot, custom ERP systems, and cloud infrastructure.',
-  url: 'https://sonint.tech',
+  url: 'https://sonint.io',
   mainEntity: {
     '@type': 'Organization',
     name: 'Sonint Technology',

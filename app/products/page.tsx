@@ -40,7 +40,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Business Software Products | ERP, CRM & Analytics Solutions",
     description: "Ready-to-deploy business software by Sonint Technology. Project management, CRM systems, custom ERP solutions & analytics dashboards. Built in India, trusted globally.",
-    url: "https://sonint.tech/products",
+    url: "https://sonint.io/products",
     images: [
       {
         url: "/og.png",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     ]
   },
   alternates: {
-    canonical: "https://sonint.tech/products"
+    canonical: "https://sonint.io/products"
   }
 };
 
@@ -61,7 +61,7 @@ const productsJsonLd = {
   '@type': 'CollectionPage',
   name: 'Software Products & Solutions',
   description: 'Comprehensive business software products and solutions by Sonint Technology',
-  url: 'https://sonint.tech/products',
+  url: 'https://sonint.io/products',
   mainEntity: {
     '@type': 'ItemList',
     name: 'Business Software Products',

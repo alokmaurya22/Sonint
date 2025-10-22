@@ -3,7 +3,7 @@ import { Metadata } from 'next';
 export const siteConfig = {
   name: 'Sonint Technology',
   description: 'Sonint Technology builds custom software, AI automation, and cloud-native solutions from India for global clients. Rooted in India, engineered for the world.',
-  url: 'https://sonint.tech',
+  url: 'https://sonint.io',
   ogImage: '/og.png',
   creator: '@soninttech',
   keywords: [
@@ -133,8 +133,8 @@ export const organizationSchema = {
   '@type': 'Organization',
   name: 'Sonint Technology',
   alternateName: 'Sonint',
-  url: 'https://sonint.tech',
-  logo: 'https://sonint.tech/sonintLogo.png',
+  url: 'https://sonint.io',
+  logo: 'https://sonint.io/sonintLogo.png',
   description: siteConfig.description,
   foundingDate: '2024',
   address: {
@@ -147,7 +147,7 @@ export const organizationSchema = {
     '@type': 'ContactPoint',
     telephone: '+91-98765-43210',
     contactType: 'customer service',
-    email: 'hello@sonint.tech'
+    email: 'hello@sonint.io'
   },
   sameAs: [
     'https://github.com/sonint-tech',
@@ -159,14 +159,14 @@ export const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Sonint Technology',
-  url: 'https://sonint.tech',
+  url: 'https://sonint.io',
   description: siteConfig.description,
   publisher: organizationSchema,
   potentialAction: {
     '@type': 'SearchAction',
     target: {
       '@type': 'EntryPoint',
-      urlTemplate: 'https://sonint.tech/search?q={search_term_string}'
+      urlTemplate: 'https://sonint.io/search?q={search_term_string}'
     },
     'query-input': 'required name=search_term_string'
   }

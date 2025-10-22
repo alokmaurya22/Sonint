@@ -93,14 +93,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://sonint.tech'),
+  metadataBase: new URL('https://sonint.io'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://sonint.tech',
+    url: 'https://sonint.io',
     title: 'Sonint Technology – Software Development Company in India | Full-Stack & AI Solutions',
     description: 'Sonint Technology builds custom software, AI automation, and cloud-native solutions from India for global clients. Rooted in India, engineered for the world.',
     siteName: 'Sonint Technology',
@@ -159,8 +159,8 @@ export default function RootLayout({
     '@type': 'Organization',
     name: 'Sonint Technology',
     alternateName: 'Sonint',
-    url: 'https://sonint.tech',
-    logo: 'https://sonint.tech/sonintLogo.png',
+    url: 'https://sonint.io',
+    logo: 'https://sonint.io/sonintLogo.png',
     description: 'Leading software development company specializing in React web applications, Spring Boot APIs, custom ERP systems, cloud infrastructure, and AI integration.',
     foundingDate: '2024',
     founders: [
@@ -179,7 +179,7 @@ export default function RootLayout({
       '@type': 'ContactPoint',
       telephone: '+91-98765-43210',
       contactType: 'customer service',
-      email: 'hello@sonint.tech'
+      email: 'hello@sonint.io'
     },
     sameAs: [
       'https://github.com/sonint-tech',

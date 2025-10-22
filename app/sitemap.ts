@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://sonint.tech'
+  const baseUrl = 'https://sonint.io'
   
   // Additional domain variations for SEO
   // sonint.io, sonint.in, sonint.vercel.app

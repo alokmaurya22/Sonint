@@ -1,6 +1,6 @@
 // Domain configuration for Sonint Technology
 export const domains = {
-  primary: 'https://sonint.tech',
+  primary: 'https://sonint.io',
   alternatives: [
     'https://sonint.io',
     'https://sonint.in', 

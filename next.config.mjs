@@ -48,7 +48,7 @@ const nextConfig = {
             value: 'sonint.io',
           },
         ],
-        destination: 'https://sonint.tech/:path*',
+        destination: 'https://sonint.io/:path*',
         permanent: true,
       },
       {
@@ -59,7 +59,7 @@ const nextConfig = {
             value: 'sonint.in',
           },
         ],
-        destination: 'https://sonint.tech/:path*',
+        destination: 'https://sonint.io/:path*',
         permanent: true,
       },
       {
@@ -70,7 +70,7 @@ const nextConfig = {
             value: 'sonint.vercel.app',
           },
         ],
-        destination: 'https://sonint.tech/:path*',
+        destination: 'https://sonint.io/:path*',
         permanent: true,
       },
       // Add other SEO redirects as needed

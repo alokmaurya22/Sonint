@@ -147,7 +147,7 @@ The website is fully responsive with breakpoints:
 
 ## 📞 Contact Information
 
-- **Email**: hello@sonint.tech
+- **Email**: hello@sonint.io
 - **WhatsApp**: +91 98765 43210
 - **Location**: Sonbhadra, Uttar Pradesh, India
 - **GitHub**: https://github.com/sonint-tech

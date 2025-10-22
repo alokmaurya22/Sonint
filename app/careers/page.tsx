@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Software Developer Jobs India | React, Spring Boot & DevOps Careers",
     description: "Join Sonint Technology's remote-first team! Hiring React developers, Spring Boot engineers & DevOps specialists. Build global software from India's heartland. Apply now!",
-    url: "https://sonint.tech/careers",
+    url: "https://sonint.io/careers",
     images: [
       {
         url: "/og.png",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     ]
   },
   alternates: {
-    canonical: "https://sonint.tech/careers"
+    canonical: "https://sonint.io/careers"
   }
 };
 
@@ -72,14 +72,14 @@ const careersJsonLd = {
   '@type': 'WebPage',
   name: 'Careers at Sonint Technology',
   description: 'Join our growing remote development team with opportunities for React developers, Spring Boot engineers, and DevOps specialists.',
-  url: 'https://sonint.tech/careers',
+  url: 'https://sonint.io/careers',
   mainEntity: {
     '@type': 'Organization',
     name: 'Sonint Technology',
     hiringOrganization: {
       '@type': 'Organization',
       name: 'Sonint Technology',
-      sameAs: 'https://sonint.tech'
+      sameAs: 'https://sonint.io'
     },
     jobLocation: {
       '@type': 'Place',
@@ -220,7 +220,7 @@ export default function CareersPage() {
               Don't see a perfect match? We're always interested in connecting with talented engineers. Send us your resume and let's explore opportunities together.
             </p>
             <div className="flex flex-col gap-3 sm:flex-row">
-              <Link href="mailto:careers@sonint.tech">
+              <Link href="mailto:careers@sonint.io">
                 <Button>Send Your Resume</Button>
               </Link>
               <Link href="/#contact">

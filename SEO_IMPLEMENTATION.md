@@ -109,11 +109,11 @@ Copy `.env.example` to `.env.local` and configure:
 
 ```bash
 # Required for production
-NEXT_PUBLIC_SITE_URL=https://sonint.tech
+NEXT_PUBLIC_SITE_URL=https://sonint.io
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 
 # Domain Configuration
-NEXT_PUBLIC_PRIMARY_DOMAIN=https://sonint.tech
+NEXT_PUBLIC_PRIMARY_DOMAIN=https://sonint.io
 NEXT_PUBLIC_ALT_DOMAIN_1=https://sonint.io
 NEXT_PUBLIC_ALT_DOMAIN_2=https://sonint.in
 NEXT_PUBLIC_ALT_DOMAIN_3=https://sonint.vercel.app
@@ -125,14 +125,14 @@ NEXT_PUBLIC_BING_VERIFICATION=your-bing-verification-code
 
 ### 2. Domain Management
 The website supports multiple domains with automatic redirects:
-- **Primary Domain**: sonint.tech (main SEO focus)
+- **Primary Domain**: sonint.io (main SEO focus)
 - **Alternative Domains**: sonint.io, sonint.in, sonint.vercel.app
 - **Redirect Strategy**: All alternative domains redirect to primary domain
 - **SEO Benefit**: Consolidates domain authority and prevents duplicate content
 
 ### 2. Google Search Console
 1. Add and verify your website
-2. Submit sitemap: `https://sonint.tech/sitemap.xml`
+2. Submit sitemap: `https://sonint.io/sitemap.xml`
 3. Monitor indexing status and search performance
 
 ### 3. Google Analytics
