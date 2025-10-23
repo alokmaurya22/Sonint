@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import projectsData from "../../../../app/projects/projectsData.js";
@@ -104,7 +104,7 @@ export function ProjectsSection1() {
                         
                         {/* Project Image */}
                         <div className="flex-1">
-                          <div className="bg-muted rounded-lg overflow-hidden">
+                          <div className="bg-muted rounded-lg overflow-hidden border-2">
                             <img 
                               src={project.image} 
                               alt={project.title}
@@ -168,6 +168,7 @@ export function ProjectsSection1() {
             <Link href="/projects">
               <Button variant="outline" size="lg" className="border-orange-500">
                 View All Projects
+                <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
           </div>
