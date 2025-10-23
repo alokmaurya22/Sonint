@@ -3,7 +3,6 @@ export const domains = {
   primary: 'https://sonint.io',
   alternatives: [
     'https://sonint.io',
-    'https://sonint.in', 
     'https://sonint.vercel.app'
   ]
 };
@@ -55,7 +54,7 @@ export const domainSEO = {
   },
   socialProfiles: {
     twitter: '@soninttech',
-    linkedin: 'https://linkedin.com/company/sonint-technology',
+    linkedin: 'https://linkedin.com/company/sonint',
     github: 'https://github.com/sonint-tech'
   }
 };

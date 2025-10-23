@@ -44,6 +44,7 @@ export function ContactSection1() {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
+          formType:"CONTACT PAGE",
           name: formData.name,
           company: formData.company,
           email: formData.email,

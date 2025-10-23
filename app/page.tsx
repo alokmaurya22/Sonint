@@ -15,10 +15,15 @@ import { Footer1 } from "@/components/pro-blocks/landing-page/footers/footer-1";
 import { ScrollToTop } from "@/components/scroll-to-top";
 
 export const metadata: Metadata = {
-  title: "Custom Software Development & AI Automation | React, Spring Boot Experts",
+  title: "Sonint | Software and Website Development",
   description: "Transform your business with Sonint Technology's custom software solutions. We build React applications, Spring Boot APIs, ERP systems & AI automation. From India's heartland to global excellence.",
   keywords: [
     // Primary Focus Keywords for Homepage
+    "software company in robertsganj",
+    "software company in sonbhadra",
+    "software company in 231216",
+    "website development company in robertsganj",
+    "software development company in robertsganj",
     "software development company in India",
     "custom software solutions",
     "full stack development services",
@@ -63,7 +68,7 @@ export const metadata: Metadata = {
     "startup technology solutions"
   ],
   openGraph: {
-    title: "Custom Software Development & AI Automation | Sonint Technology",
+    title: "Sonint Technology | Custom Software Development & AI Automation",
     description: "Transform your business with Sonint Technology's custom software solutions. We build React applications, Spring Boot APIs, ERP systems & AI automation. From India's heartland to global excellence.",
     url: "https://sonint.io",
     images: [

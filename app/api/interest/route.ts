@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        formType: 'Product Interest',
+        formType: 'PRODUCT INTEREST',
         productName: productName,
         name: name,
         phone: phone,

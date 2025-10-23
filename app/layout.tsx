@@ -17,6 +17,11 @@ export const metadata: Metadata = {
     "Sonint Technology builds custom software, AI automation, and cloud-native solutions from India for global clients. Rooted in India, engineered for the world.",
   keywords: [
     // Primary Keywords (High Relevance)
+    "software company in robertsganj",
+    "software company in sonbhadra",
+    "software company in 231216",
+    "website development company in robertsganj",
+    "software development company in robertsganj",
     "software development company in India",
     "custom software solutions",
     "full stack development services",
