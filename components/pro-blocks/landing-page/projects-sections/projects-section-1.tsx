@@ -64,7 +64,7 @@ export function ProjectsSection1() {
                     <Card className="bg-secondary rounded-xl border shadow-sm mx-2">
                       <CardContent className="flex flex-col gap-6 p-8 lg:flex-row lg:items-center lg:gap-12">
                         {/* Project Info */}
-                        <div className="flex flex-1 flex-col gap-4  ml-2 mr-2">
+                        <div className="flex flex-1 flex-col gap-4  md:ml-2 md:mr-2">
                           <h3 className="text-2xl font-semibold text-foreground">
                             {project.title}
                           </h3>

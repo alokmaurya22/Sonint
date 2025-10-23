@@ -90,7 +90,7 @@ export function InterestModal({ isOpen, onClose, productName, productImage }: In
 
     return (
         <Dialog open={isOpen} onOpenChange={resetAndClose}>
-            <DialogContent className="sm:max-w-md border-1 border-orange-500">
+            <DialogContent className="w-full max-w-[90%] sm:max-w-md border border-orange-500 px-4 sm:px-6 rounded-md">
                 <DialogHeader>
                     <DialogTitle className="flex items-center justify-between">
                         <div className="flex items-center gap-2 classNameForBoth text-green-500">
@@ -146,7 +146,7 @@ export function InterestModal({ isOpen, onClose, productName, productImage }: In
                                 </div>
                             </div>
                         </div>
-                        <div className="grid grid-cols-2 gap-4">
+                        <div className="grid grid-cols-2 gap-4 sm:text-sm">
                             <div>
                                 <Label htmlFor="name">Name *</Label>
                                 <Input
@@ -156,6 +156,7 @@ export function InterestModal({ isOpen, onClose, productName, productImage }: In
                                     onChange={handleInputChange}
                                     required
                                     placeholder="Your full name"
+                                    className="placeholder:text-sm"
                                 />
                             </div>
                             <div>
@@ -168,6 +169,7 @@ export function InterestModal({ isOpen, onClose, productName, productImage }: In
                                     onChange={handleInputChange}
                                     required
                                     placeholder="Your phone number"
+                                    className="placeholder:text-sm"
                                 />
                             </div>
                         </div>
@@ -181,6 +183,7 @@ export function InterestModal({ isOpen, onClose, productName, productImage }: In
                                 value={formData.email}
                                 onChange={handleInputChange}
                                 placeholder="your.email@example.com"
+                                className="placeholder:text-sm"
                             />
                         </div>
 
@@ -192,6 +195,7 @@ export function InterestModal({ isOpen, onClose, productName, productImage }: In
                                 value={formData.company}
                                 onChange={handleInputChange}
                                 placeholder="Your company name (optional)"
+                                className="placeholder:text-sm"
                             />
                         </div>
 
@@ -204,6 +208,7 @@ export function InterestModal({ isOpen, onClose, productName, productImage }: In
                                 onChange={handleInputChange}
                                 placeholder="Tell us more about your requirements or any specific questions..."
                                 rows={3}
+                                className="placeholder:text-sm"
                             />
                         </div>
 

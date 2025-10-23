@@ -82,7 +82,7 @@ export function ProductsSection1() {
                     <Card className="bg-background rounded-xl border shadow-sm mx-2">
                       <CardContent className="flex flex-col gap-6 p-8 lg:flex-row lg:items-center lg:gap-12">
                         {/* Product Info */}
-                        <div className="flex flex-1 flex-col gap-4 ml-2 mr-2">
+                        <div className="flex flex-1 flex-col gap-4 md:ml-2 md:mr-2">
                           <div className="flex items-center gap-4">
                             <h3 className="text-2xl font-semibold text-foreground">
                               {product.name}
@@ -116,7 +116,15 @@ export function ProductsSection1() {
                               <span className="text-sm font-medium">{product.users} users</span>
                             </div>
                             <div className="text-2xl font-bold text-primary">
-                              {product.price}
+                              {/*product.price*/}
+                              <Button
+                                variant="secondary"
+                                onClick={() => handleShowInterest(product)}
+                                className="border-2 border-green-500"
+                              >
+                                <Heart className="h-4 w-4 text-orange-500" />
+                                Show Interest
+                              </Button>
                             </div>
                           </div>
                           
@@ -135,14 +143,6 @@ export function ProductsSection1() {
                                   <ArrowRight className="h-4 w-4" />
                                 </Button>
                               </Link>
-                              <Button
-                                variant="secondary"
-                                onClick={() => handleShowInterest(product)}
-                                className="border-2 border-green-500"
-                              >
-                                <Heart className="h-4 w-4 text-orange-500" />
-                                Show Interest
-                              </Button>
                             </div>
                           </div>
                         </div>
