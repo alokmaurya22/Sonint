@@ -52,7 +52,7 @@ export function ProjectsSection1() {
           </div>
 
           {/* Projects Carousel */}
-          <div className="relative max-w-5xl mx-auto">
+          <div className="relative">
             {/* Carousel Container */}
             <div className="overflow-hidden rounded-xl">
               <div 
@@ -61,11 +61,11 @@ export function ProjectsSection1() {
               >
                 {projects.map((project, index) => (
                   <div key={index} className="w-full flex-shrink-0">
-                    <Card className="bg-secondary rounded-xl border shadow-sm mx-4">
-                      <CardContent className="flex flex-col gap-4 p-6 lg:flex-row lg:items-center lg:gap-8">
+                    <Card className="bg-secondary rounded-xl border shadow-sm mx-2">
+                      <CardContent className="flex flex-col gap-6 p-8 lg:flex-row lg:items-center lg:gap-12">
                         {/* Project Info */}
-                        <div className="flex flex-1 flex-col gap-3 max-w-md">
-                          <h3 className="text-xl font-semibold text-foreground">
+                        <div className="flex flex-1 flex-col gap-4">
+                          <h3 className="text-2xl font-semibold text-foreground">
                             {project.title}
                           </h3>
                           
@@ -74,11 +74,11 @@ export function ProjectsSection1() {
                           </p>
                           
                           {/* Technologies */}
-                          <div className="flex flex-wrap gap-1">
+                          <div className="flex flex-wrap gap-2">
                             {project.technologies.map((tech, techIndex) => (
                               <span 
                                 key={techIndex}
-                                className="bg-background text-foreground px-2 py-1 rounded-full text-xs border"
+                                className="bg-background text-foreground px-3 py-1 rounded-full text-sm border"
                               >
                                 {tech}
                               </span>
@@ -86,16 +86,16 @@ export function ProjectsSection1() {
                           </div>
                           
                           {/* Project Links */}
-                          <div className="flex gap-2">
+                          <div className="flex gap-3">
                             <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                              <Button size="sm">
-                                <ExternalLink className="h-3 w-3" />
+                              <Button>
+                                <ExternalLink className="h-4 w-4" />
                                 Live Demo
                               </Button>
                             </Link>
                             <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-                              <Button variant="outline" size="sm">
-                                <Github className="h-3 w-3" />
+                              <Button variant="outline">
+                                <Github className="h-4 w-4" />
                                 GitHub
                               </Button>
                             </Link>
@@ -108,7 +108,7 @@ export function ProjectsSection1() {
                             <img 
                               src={project.image} 
                               alt={project.title}
-                              className="w-full h-full object-cover"
+                              className="w-full h-full object-fit-cover"
                               onError={(e) => {
                                 e.currentTarget.style.display = 'none';
                                 const nextElement = e.currentTarget.nextElementSibling as HTMLElement;

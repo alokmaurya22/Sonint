@@ -9,24 +9,6 @@ const projectsData = [
         githubLink: "https://github.com/alokmaurya22/sir_musiz"
     },
     {
-        title: "Extrabite",
-        subtitle: "A Food Donation and Redistribution Platform",
-        description: "Created a web platform connecting surplus food providers with NGOs and individuals, featuring live donation listings, OTP-based pickups, personalized dashboards, and secure role-based access control.",
-        image: "/project-img/pro-extrabite.png",
-        techStack: "React.js, Tailwind CSS, Spring Boot, PostgreSQL, JWT Auth, Docker, Cloudinary, Google Maps API, OpenAI API",
-        liveLink: "https://extrabite.vercel.app/",
-        githubLink: "https://github.com/alokmaurya22/extrabite-frontend"
-    },
-    {
-        title: "Social Sphere",
-        subtitle: "A Web-based Social Media Platform",
-        description: "Designed and developed a full-stack social media web app with posts, chat, AI assistant, and real-time features, improving user engagement across devices.",
-        image: "/project-img/pro-social-sphere.png",
-        techStack: "React.js, Tailwind CSS, Firebase, Firestore, React Router",
-        liveLink: "https://social-sphere-self.vercel.app/",
-        githubLink: "https://github.com/alokmaurya22/SocialSphere"
-    },
-    {
         title: "Restro Sathi",
         subtitle: "Restaurant Table Booking System",
         description: "Developed smart table booking system that reduced client wait time by 90%, built with PHP, MySQL, and Bootstrap 5.",
@@ -61,6 +43,24 @@ const projectsData = [
         techStack: "HTML, CSS, HTML5, CSS3, JavaScript (Vanilla), Bootstrap 5",
         liveLink: "https://akhilesh10gupta.github.io/Tipsytown/",
         githubLink: "https://github.com/Akhilesh10gupta/Tipsytown"
+    },
+    {
+        title: "Extrabite",
+        subtitle: "A Food Donation and Redistribution Platform",
+        description: "Created a web platform connecting surplus food providers with NGOs and individuals, featuring live donation listings, OTP-based pickups, personalized dashboards, and secure role-based access control.",
+        image: "/project-img/pro-extrabite.png",
+        techStack: "React.js, Tailwind CSS, Spring Boot, PostgreSQL, JWT Auth, Docker, Cloudinary, Google Maps API, OpenAI API",
+        liveLink: "https://extrabite.vercel.app/",
+        githubLink: "https://github.com/alokmaurya22/extrabite-frontend"
+    },
+    {
+        title: "Social Sphere",
+        subtitle: "A Web-based Social Media Platform",
+        description: "Designed and developed a full-stack social media web app with posts, chat, AI assistant, and real-time features, improving user engagement across devices.",
+        image: "/project-img/pro-social-sphere.png",
+        techStack: "React.js, Tailwind CSS, Firebase, Firestore, React Router",
+        liveLink: "https://social-sphere-self.vercel.app/",
+        githubLink: "https://github.com/alokmaurya22/SocialSphere"
     }
 ];
 
