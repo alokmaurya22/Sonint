@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { ExternalLink, Star, Users } from "lucide-react";
+import { InterestModal } from "@/components/interest-modal";
+import { ExternalLink, Star, Users, Heart } from "lucide-react";
 import Link from "next/link";
 
 interface ProductCardProps {
@@ -21,7 +23,16 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const [isInterestModalOpen, setIsInterestModalOpen] = useState(false);
+
   return (
+    <>
+      <InterestModal
+        isOpen={isInterestModalOpen}
+        onClose={() => setIsInterestModalOpen(false)}
+        productName={product.title}
+        productImage={product.image}
+      />
     <Card className="bg-secondary rounded-xl border shadow-sm hover:shadow-md transition-shadow">
       <CardContent className="flex flex-col gap-4 sm:gap-6 p-4 sm:p-6">
         {/* Product Image */}
@@ -29,7 +40,7 @@ export function ProductCard({ product }: ProductCardProps) {
           <img 
             src={product.image} 
             alt={product.title}
-            className="w-full h-full object-cover"
+            className="w-relative object-fit-cover"
             onError={(e) => {
               e.currentTarget.style.display = 'none';
               const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
@@ -82,31 +93,49 @@ export function ProductCard({ product }: ProductCardProps) {
         </div>
         
         {/* Price and Users */}
-        <div className="flex items-center justify-between">
+        <div className="hidden flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="text-lg font-bold text-primary">{product.price}</span>
           </div>
           <div className="flex items-center gap-1 text-muted-foreground">
-            <Users className="h-3 w-3" />
+            <Users className="h-3 w-3 text-orange-500" />
             <span className="text-xs">{product.users} users</span>
           </div>
         </div>
         
         {/* Product Links */}
-        <div className="flex gap-2 mt-auto">
-          <Link href={product.trial_link} className="flex-1" target="_blank" rel="noopener noreferrer">
-            <Button size="sm" className="w-full text-xs sm:text-sm">
-              <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
-              Try Free
+        <div className="flex flex-col gap-2 mt-auto">
+          <div className="flex gap-2">
+            <Link href={product.trial_link} className="flex-1" target="_blank" rel="noopener noreferrer">
+              <Button size="sm" className="w-full text-xs sm:text-sm">
+                <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4" />
+                Try Free
+              </Button>
+            </Link>
+            <Link href={product.learn_more_discription} target="_blank" rel="noopener noreferrer">
+              <Button size="sm" variant="outline" className="px-2 sm:px-3">
+                Learn More
+              </Button>
+            </Link>
+          </div>
+          <div className="flex gap-2">
+            <Button
+              size="sm"
+              variant="secondary"
+              onClick={() => setIsInterestModalOpen(true)}
+              className="text-xs sm:text-sm border-2 border-green-500 mx-auto"
+            >
+              <Heart className="h-3 w-3 sm:h-4 sm:w-4 text-orange-500" />
+              Show Interest
             </Button>
-          </Link>
-          <Link href={product.learn_more_discription} target="_blank" rel="noopener noreferrer">
-            <Button size="sm" variant="outline" className="px-2 sm:px-3">
-              Learn More
-            </Button>
-          </Link>
+            <div className="flex items-center gap-1 text-muted-foreground">
+              <Users className="h-3 w-3 text-orange-500" />
+              <span className="text-xs">{product.users} users</span>
+            </div>
+          </div>
         </div>
       </CardContent>
     </Card>
+    </>
   );
 }
