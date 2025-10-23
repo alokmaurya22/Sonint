@@ -5,44 +5,20 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import projectsData from "../../../../app/products/projectsData.js";
 
 export function ProjectsSection1() {
   const [currentIndex, setCurrentIndex] = useState(0);
   
-  const projects = [
-    {
-      title: "E-Commerce Platform",
-      description: "Modern online store with payment integration, inventory management, and admin dashboard.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      image: "/project1.jpg",
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Task Management App",
-      description: "Collaborative project management tool with real-time updates and team collaboration features.",
-      technologies: ["Next.js", "PostgreSQL", "Socket.io", "Tailwind"],
-      image: "/project2.jpg",
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Business Analytics Dashboard",
-      description: "Data visualization platform for business insights with interactive charts and reports.",
-      technologies: ["React", "Spring Boot", "MySQL", "Chart.js"],
-      image: "/project3.jpg",
-      liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      title: "Healthcare Management System",
-      description: "Complete patient management solution with appointment scheduling and medical records.",
-      technologies: ["Vue.js", "Laravel", "MySQL", "Chart.js"],
-      image: "/project4.jpg",
-      liveUrl: "#",
-      githubUrl: "#"
-    }
-  ];
+  // Use all projects for the carousel
+  const projects = projectsData.map(project => ({
+    title: project.title,
+    description: project.description,
+    technologies: project.techStack.split(', ').map(tech => tech.trim()).slice(0, 4),
+    image: project.image,
+    liveUrl: project.liveLink,
+    githubUrl: project.githubLink
+  }));
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -76,7 +52,7 @@ export function ProjectsSection1() {
           </div>
 
           {/* Projects Carousel */}
-          <div className="relative">
+          <div className="relative max-w-5xl mx-auto">
             {/* Carousel Container */}
             <div className="overflow-hidden rounded-xl">
               <div 
@@ -85,11 +61,11 @@ export function ProjectsSection1() {
               >
                 {projects.map((project, index) => (
                   <div key={index} className="w-full flex-shrink-0">
-                    <Card className="bg-secondary rounded-xl border shadow-sm mx-2">
-                      <CardContent className="flex flex-col gap-6 p-8 lg:flex-row lg:items-center lg:gap-12">
+                    <Card className="bg-secondary rounded-xl border shadow-sm mx-4">
+                      <CardContent className="flex flex-col gap-4 p-6 lg:flex-row lg:items-center lg:gap-8">
                         {/* Project Info */}
-                        <div className="flex flex-1 flex-col gap-4">
-                          <h3 className="text-2xl font-semibold text-foreground">
+                        <div className="flex flex-1 flex-col gap-3 max-w-md">
+                          <h3 className="text-xl font-semibold text-foreground">
                             {project.title}
                           </h3>
                           
@@ -98,11 +74,11 @@ export function ProjectsSection1() {
                           </p>
                           
                           {/* Technologies */}
-                          <div className="flex flex-wrap gap-2">
+                          <div className="flex flex-wrap gap-1">
                             {project.technologies.map((tech, techIndex) => (
                               <span 
                                 key={techIndex}
-                                className="bg-background text-foreground px-3 py-1 rounded-full text-sm border"
+                                className="bg-background text-foreground px-2 py-1 rounded-full text-xs border"
                               >
                                 {tech}
                               </span>
@@ -110,26 +86,40 @@ export function ProjectsSection1() {
                           </div>
                           
                           {/* Project Links */}
-                          <div className="flex gap-3">
-                            <Link href={project.liveUrl}>
-                              <Button>
-                                <ExternalLink className="h-4 w-4" />
+                          <div className="flex gap-2">
+                            <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                              <Button size="sm">
+                                <ExternalLink className="h-3 w-3" />
                                 Live Demo
                               </Button>
                             </Link>
-                            <Link href={project.githubUrl}>
-                              <Button variant="outline">
-                                <Github className="h-4 w-4" />
+                            <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                              <Button variant="outline" size="sm">
+                                <Github className="h-3 w-3" />
                                 GitHub
                               </Button>
                             </Link>
                           </div>
                         </div>
                         
-                        {/* Project Image Placeholder */}
+                        {/* Project Image */}
                         <div className="flex-1">
-                          <div className="bg-muted rounded-lg h-64 flex items-center justify-center">
-                            <span className="text-muted-foreground">Project Screenshot</span>
+                          <div className="bg-muted rounded-lg overflow-hidden">
+                            <img 
+                              src={project.image} 
+                              alt={project.title}
+                              className="w-full h-full object-cover"
+                              onError={(e) => {
+                                e.currentTarget.style.display = 'none';
+                                const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
+                                if (nextElement) {
+                                  nextElement.style.display = 'flex';
+                                }
+                              }}
+                            />
+                            <div className="w-full h-full hidden items-center justify-center bg-muted">
+                              <span className="text-muted-foreground">Project Screenshot</span>
+                            </div>
                           </div>
                         </div>
                       </CardContent>
