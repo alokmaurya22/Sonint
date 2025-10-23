@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { LpNavbar1 } from "@/components/pro-blocks/landing-page/lp-navbars/lp-navbar-1";
 import { Footer1 } from "@/components/pro-blocks/landing-page/footers/footer-1";
 import { Button } from "@/components/ui/button";
+import { Pagination } from "@/components/ui/pagination";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ScrollToTop } from "@/components/scroll-to-top";
@@ -10,7 +12,19 @@ import { ProjectCard } from "@/components/project-card";
 import projectsData from "../projects/projectsData.js";
 
 export default function ProjectsPage() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+  
   const projects = projectsData;
+  const totalPages = Math.ceil(projects.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentProjects = projects.slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <main>
@@ -35,10 +49,16 @@ export default function ProjectsPage() {
       <section className="bg-background section-padding-y">
         <div className="container-padding-x container mx-auto">
           <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
-            {projects.map((project, index) => (
-              <ProjectCard key={index} project={project} />
+            {currentProjects.map((project, index) => (
+              <ProjectCard key={startIndex + index} project={project} />
             ))}
           </div>
+          
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
         </div>
       </section>
 

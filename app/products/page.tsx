@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { LpNavbar1 } from "@/components/pro-blocks/landing-page/lp-navbars/lp-navbar-1";
 import { Footer1 } from "@/components/pro-blocks/landing-page/footers/footer-1";
 import { Button } from "@/components/ui/button";
+import { Pagination } from "@/components/ui/pagination";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ScrollToTop } from "@/components/scroll-to-top";
@@ -10,7 +12,19 @@ import { ProductCard } from "@/components/product-card";
 import productsData from "../products/productsData.js";
 
 export default function ProductsPage() {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6;
+  
   const products = productsData;
+  const totalPages = Math.ceil(products.length / itemsPerPage);
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentProducts = products.slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <main>
@@ -35,10 +49,16 @@ export default function ProductsPage() {
       <section className="bg-background section-padding-y">
         <div className="container-padding-x container mx-auto">
           <div className="grid grid-cols-1 gap-6 sm:gap-8 md:grid-cols-2 xl:grid-cols-3">
-            {products.map((product, index) => (
-              <ProductCard key={index} product={product} />
+            {currentProducts.map((product, index) => (
+              <ProductCard key={startIndex + index} product={product} />
             ))}
           </div>
+          
+          <Pagination
+            currentPage={currentPage}
+            totalPages={totalPages}
+            onPageChange={handlePageChange}
+          />
         </div>
       </section>
 
