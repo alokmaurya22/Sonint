@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ProjectCard } from "@/components/project-card";
-import projectsData from "../app/products/projectsData.js";
+import projectsData from "../app/projects/projectsData.js";
 
 interface ProjectsSectionProps {
   showAll?: boolean;

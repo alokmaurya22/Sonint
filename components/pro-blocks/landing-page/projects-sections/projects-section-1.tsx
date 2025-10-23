@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import projectsData from "../../../../app/products/projectsData.js";
+import projectsData from "../../../../app/projects/projectsData.js";
 
 export function ProjectsSection1() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -90,7 +90,7 @@ export function ProjectsSection1() {
                             <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                               <Button>
                                 <ExternalLink className="h-4 w-4" />
-                                Live Demo
+                                Live
                               </Button>
                             </Link>
                             <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
@@ -155,7 +155,7 @@ export function ProjectsSection1() {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentIndex ? 'bg-primary' : 'bg-muted'
+                    index === currentIndex ? 'bg-orange-500' : 'bg-secondary'
                   }`}
                   aria-label={`Go to project ${index + 1}`}
                 />
@@ -166,7 +166,7 @@ export function ProjectsSection1() {
           {/* View More Button */}
           <div className="flex justify-center">
             <Link href="/projects">
-              <Button variant="outline" size="lg">
+              <Button variant="outline" size="lg" className="border-orange-500">
                 View All Projects
               </Button>
             </Link>

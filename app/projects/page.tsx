@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { ProjectCard } from "@/components/project-card";
-import projectsData from "../products/projectsData.js";
+import projectsData from "../projects/projectsData.js";
 
 export default function ProjectsPage() {
   const projects = projectsData;
