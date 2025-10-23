@@ -13,7 +13,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
   const getVisiblePages = () => {
     const pages = [];
     const maxVisible = 5;
-    
+
     if (totalPages <= maxVisible) {
       for (let i = 1; i <= totalPages; i++) {
         pages.push(i);
@@ -41,7 +41,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
         pages.push(totalPages);
       }
     }
-    
+
     return pages;
   };
 
@@ -58,7 +58,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
       >
         <ChevronLeft className="h-4 w-4" />
       </Button>
-      
+
       {getVisiblePages().map((page, index) => (
         <div key={index}>
           {page === '...' ? (
@@ -75,7 +75,7 @@ export function Pagination({ currentPage, totalPages, onPageChange }: Pagination
           )}
         </div>
       ))}
-      
+
       <Button
         variant="outline"
         size="sm"
