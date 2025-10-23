@@ -40,8 +40,8 @@ export async function POST(request: NextRequest) {
       }),
     });
 
-    console.log("body",body);
-    console.log("responce",response);
+    //console.log("body",body);
+    //console.log("responce",response);
 
     if (response.ok) {
       return NextResponse.json(
