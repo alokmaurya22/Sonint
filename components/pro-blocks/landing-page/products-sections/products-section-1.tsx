@@ -2,9 +2,10 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Users, Zap, ChevronLeft, ChevronRight } from "lucide-react";
+import { ArrowRight, Star, Users, Zap, ChevronLeft, ChevronRight, Heart } from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { InterestModal } from "@/components/interest-modal";
 import productsData from "../../../../app/products/productsData.js";
 
 // Map the products data to match the component structure
@@ -22,6 +23,8 @@ const products = productsData.map((product: any) => ({
 
 export function ProductsSection1() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isInterestModalOpen, setIsInterestModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -39,9 +42,21 @@ export function ProductsSection1() {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + products.length) % products.length);
   };
 
+  const handleShowInterest = (product: any) => {
+    setSelectedProduct(product);
+    setIsInterestModalOpen(true);
+  };
+
   return (
-    <section className="bg-secondary section-padding-y border-b" id="products">
-      <div className="container-padding-x container mx-auto">
+    <>
+      <InterestModal
+        isOpen={isInterestModalOpen}
+        onClose={() => setIsInterestModalOpen(false)}
+        productName={selectedProduct?.name || ""}
+        productImage={selectedProduct?.image || ""}
+      />
+      <section className="bg-secondary section-padding-y border-b" id="products">
+        <div className="container-padding-x container mx-auto">
         <div className="flex flex-col gap-10 md:gap-12">
           {/* Section Header */}
           <div className="section-title-gap-lg mx-auto flex max-w-xl flex-col items-center text-center">
@@ -67,7 +82,7 @@ export function ProductsSection1() {
                     <Card className="bg-background rounded-xl border shadow-sm mx-2">
                       <CardContent className="flex flex-col gap-6 p-8 lg:flex-row lg:items-center lg:gap-12">
                         {/* Product Info */}
-                        <div className="flex flex-1 flex-col gap-4">
+                        <div className="flex flex-1 flex-col gap-4 ml-2 mr-2">
                           <div className="flex items-center gap-4">
                             <h3 className="text-2xl font-semibold text-foreground">
                               {product.name}
@@ -106,19 +121,29 @@ export function ProductsSection1() {
                           </div>
                           
                           {/* CTA Buttons */}
-                          <div className="flex gap-3">
-                            <Link href={product.trial_link} target="_blank" rel="noopener noreferrer">
-                              <Button>
-                                Try Free Trial
-                                <Zap className="h-4 w-4" />
+                          <div className="flex flex-col gap-3">
+                            <div className="flex gap-3">
+                              <Link href={product.trial_link} target="_blank" rel="noopener noreferrer">
+                                <Button>
+                                  Try Free Trial
+                                  <Zap className="h-4 w-4" />
+                                </Button>
+                              </Link>
+                              <Link href={product.learn_more_link} target="_blank" rel="noopener noreferrer">
+                                <Button variant="outline">
+                                  Learn More
+                                  <ArrowRight className="h-4 w-4" />
+                                </Button>
+                              </Link>
+                              <Button
+                                variant="secondary"
+                                onClick={() => handleShowInterest(product)}
+                                className="border-2 border-green-500"
+                              >
+                                <Heart className="h-4 w-4 text-orange-500" />
+                                Show Interest
                               </Button>
-                            </Link>
-                            <Link href={product.learn_more_link} target="_blank" rel="noopener noreferrer">
-                              <Button variant="outline">
-                                Learn More
-                                <ArrowRight className="h-4 w-4" />
-                              </Button>
-                            </Link>
+                            </div>
                           </div>
                         </div>
                         
@@ -153,7 +178,7 @@ export function ProductsSection1() {
             <Button
               variant="outline"
               size="sm"
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 p-0 bg-background/80 backdrop-blur-sm"
+              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 p-0 bg-muted backdrop-blur-sm"
               onClick={prevProject}
             >
               <ChevronLeft className="h-4 w-4" />
@@ -162,7 +187,7 @@ export function ProductsSection1() {
             <Button
               variant="outline"
               size="sm"
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 p-0 bg-background/80 backdrop-blur-sm"
+              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 p-0 bg-muted backdrop-blur-sm"
               onClick={nextProject}
             >
               <ChevronRight className="h-4 w-4" />
@@ -195,5 +220,6 @@ export function ProductsSection1() {
         </div>
       </div>
     </section>
+    </>
   );
 }
