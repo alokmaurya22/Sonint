@@ -9,7 +9,8 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { ScrollToTop } from "@/components/scroll-to-top";
 import { ProductCard } from "@/components/product-card";
-import productsData from "../products/productsData.js";
+import productsData from "@/app/products/productsData";
+
 
 export default function ProductsPage() {
   const [currentPage, setCurrentPage] = useState(1);
