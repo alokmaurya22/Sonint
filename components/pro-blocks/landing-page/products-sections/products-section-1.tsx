@@ -191,12 +191,11 @@ export function ProductsSection1() {
                                     <Zap className="h-4 w-4" />
                                   </Button>
                                 </Link>
-                                <Link href={product.learn_more_link} target="_blank" rel="noopener noreferrer">
-                                  <Button variant="outline">
+                                  <Button variant="outline"
+                                  onClick={() => handleOpenDetails(product)}>
                                     Learn More
                                     <ArrowRight className="h-4 w-4" />
                                   </Button>
-                                </Link>
                               </div>
                             </div>
                           </div>
