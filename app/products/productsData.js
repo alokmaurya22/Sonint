@@ -1,87 +1,40 @@
 const productsData = [
+    
     {
-        title: "Sir Musiz",
-        subtitle: "A Music Company Platform",
-        description: "Sleek frontend music platform with 3D graphics, animations and modern artist UI, built using React, Three.js, and Framer Motion.",
-        image: "/product-img/pro-sirMusiz.png",
-        features: ["Team Collaboration", "Time Tracking", "Advanced Reports", "Mobile App"],
-        price: "₹29/month",
-        rating: 4.8,
-        users: "500+",
-        trial_link: "https://sirmusiz.vercel.app",
-        learn_more_discription: "https://github.com/alokmaurya22/sir_musiz"
-    },
-    {
-        title: "Restro Sathi",
-        subtitle: "Restaurant Table Booking System",
-        description: "Developed smart table booking system that reduced client wait time by 90%, built with PHP, MySQL, and Bootstrap 5.",
+        title: "Restro Sathi – Restaurant Table Booking Platform",
+        subtitle: "Smart and efficient table booking system for customers and restaurant owners.",
+        description: "Restro Sathi is a web-based restaurant reservation platform that connects customers with restaurants for hassle-free table bookings. Customers can easily request reservations, while restaurant owners can accept, reject, or keep them pending — improving booking accuracy by up to 85%. The platform includes a powerful admin panel and interactive dashboard for managing tables, monitoring real-time availability, and handling booking requests efficiently, reducing manual workload by 70%.",
         image: "/product-img/pro-restro-Sathi.png",
-        features: ["Team Collaboration", "Time Tracking", "Advanced Reports", "Mobile App"],
-        price: "₹29/month",
+        features: ["Table Booking System","Reservation Management","Admin Panel","Smart Dashboard","Real-Time Availability Tracking","Booking Request Control (Accept/Reject/Pending)","Responsive Design","Scalable Architecture","PHP & MySQL Backend"],
+        price: "₹ ... /month",
         rating: 4.8,
-        users: "500+",
-        trial_link: "https://sirmusiz.vercel.app",
-        learn_more_discription: "https://github.com/alokmaurya22/sir_musiz"
+        users: "200+",
+        trial_link: "https://restrosathi.ct.ws",
+        learn_more_discription: "https://github.com/alokmaurya22/RestroSathi"
     },
     {
-        title: "Tip Top Dresses",
-        subtitle: "Clothing Store Website",
-        description: "Clothing shop website with testimonials and ratings. Boosted engagement by 40%, built using PHP, Bootstrap & Hostinger hosting.",
-        image: "/product-img/pro-Tip-Top.png",
-        features: ["Team Collaboration", "Time Tracking", "Advanced Reports", "Mobile App"],
-        price: "₹29/month",
-        rating: 4.8,
-        users: "500+",
-        trial_link: "https://sirmusiz.vercel.app",
-        learn_more_discription: "https://github.com/alokmaurya22/sir_musiz"
-    },
-    {
-        title: "CK Solution",
-        subtitle: "Tour & Travel Agency Website",
-        description: "Developed a responsive and user-friendly website for a tour and travel agency, enhancing online visibility and customer engagement.",
-        image: "/product-img/ck-solutions.png",
-        features: ["Team Collaboration", "Time Tracking", "Advanced Reports", "Mobile App"],
-        price: "₹29/month",
-        rating: 4.8,
-        users: "500+",
-        trial_link: "https://sirmusiz.vercel.app",
-        learn_more_discription: "https://github.com/alokmaurya22/sir_musiz"
-    },
-    {
-        title: "Tipsy Town",
-        subtitle: "A premium restaurant Website",
-        description: "Developed a modern, responsive website for a premium restaurant, showcasing its menu, ambiance, and online reservation features to improve customer experience and brand presence.",
-        image: "/product-img/tipsy-town.png",
-        features: ["Team Collaboration", "Time Tracking", "Advanced Reports", "Mobile App"],
-        price: "₹29/month",
-        rating: 4.8,
-        users: "500+",
-        trial_link: "https://sirmusiz.vercel.app",
-        learn_more_discription: "https://github.com/alokmaurya22/sir_musiz"
-    },
-    {
-        title: "Extrabite",
-        subtitle: "A Food Donation and Redistribution Platform",
-        description: "Created a web platform connecting surplus food providers with NGOs and individuals, featuring live donation listings, OTP-based pickups, personalized dashboards, and secure role-based access control.",
+        title: "Extrabite – A Food Donation and Redistribution Platform",
+        subtitle: "Connecting surplus food providers, NGOs, and individuals to make food sharing effortless, secure, and sustainable.",
+        description: "Extrabite is an intelligent web platform that bridges the gap between food donors and receivers. It helps restaurants, households, and organizations donate surplus food in real-time through a transparent and automated system. With live donation listings, OTP-based pickups, personalized dashboards, and secure role-based access, Extrabite simplifies food redistribution while promoting sustainability.The platform also includes an AI-powered recipe generator that encourages households to creatively reuse leftover ingredients, reducing food waste by up to 25%. Designed for efficiency and scale, Extrabite automates up to 80% of manual coordination through integrated geolocation and Google Maps.",
         image: "/product-img/pro-extrabite.png",
-        features: ["Team Collaboration", "Time Tracking", "Advanced Reports", "Mobile App"],
-        price: "₹29/month",
+        features: ["Live Donation Listings","OTP-Based Pickups","Personalized Dashboards","AI Recipe Generator","Geolocation & Google Maps Integration","Secure Role-Based Access","Pilot Tested with 50+ Users","Dockerized Deployment"],
+        price: "₹ ... /month",
         rating: 4.8,
-        users: "500+",
-        trial_link: "https://sirmusiz.vercel.app",
-        learn_more_discription: "https://github.com/alokmaurya22/sir_musiz"
+        users: "50+",
+        trial_link: "https://extrabite.vercel.app/",
+        learn_more_discription: "https://github.com/alokmaurya22/extrabite-frontend"
     },
     {
-        title: "Social Sphere",
-        subtitle: "A Web-based Social Media Platform",
-        description: "Designed and developed a full-stack social media web app with posts, chat, AI assistant, and real-time features, improving user engagement across devices.",
+        title: "Social Sphere – A Modern Social Media Web Platform",
+        subtitle: "Connecting people through real-time conversations, media sharing, and AI-assisted engagement.",
+        description: "Social Sphere is a full-stack social media platform built to create meaningful online interactions. It enables users to share thoughts, post media, chat in real time, and explore profiles in a clean, responsive interface. The platform supports both registered and guest sessions, ensuring inclusivity and seamless access for all users. An integrated in-app AI assistant named “Soli” helps users with onboarding, navigation, and feature discovery — improving engagement and retention for over 80% of new users. The system was tested by 600+ users and successfully managed 5,000+ posts and messages without downtime across multiple devices.",
         image: "/product-img/pro-social-sphere.png",
-        features: ["Team Collaboration", "Time Tracking", "Advanced Reports", "Mobile App"],
-        price: "₹29/month",
+        features: ["Real-Time Chat","User Profiles","Guest Sessions","Searchable User Directory","Media Sharing","Thought Posts","AI Assistant – Soli","Responsive Design","Cross-Device Compatibility","Firebase-Based Backend"],
+        price: "₹ ... /month",
         rating: 4.8,
-        users: "500+",
-        trial_link: "https://sirmusiz.vercel.app",
-        learn_more_discription: "https://github.com/alokmaurya22/sir_musiz"
+        users: "120+",
+        trial_link: "https://social-sphere-self.vercel.app/",
+        learn_more_discription: "https://github.com/alokmaurya22/SocialSphere"
     }
 ];
 

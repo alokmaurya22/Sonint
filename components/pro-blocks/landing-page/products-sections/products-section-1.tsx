@@ -2,43 +2,67 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Users, Zap, ChevronLeft, ChevronRight, Heart } from "lucide-react";
+import {
+  ArrowRight,
+  Star,
+  Users,
+  Zap,
+  ChevronLeft,
+  ChevronRight,
+  Heart,
+} from "lucide-react";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { InterestModal } from "@/components/interest-modal";
 import productsData from "../../../../app/products/productsData.js";
 
-// Map the products data to match the component structure
-const products = productsData.map((product: any) => ({
-  name: product.title,
-  description: product.description,
-  features: product.features,
-  price: product.price,
-  rating: product.rating,
-  users: product.users,
-  image: product.image,
-  trial_link: product.trial_link,
-  learn_more_link: product.learn_more_discription
-}));
+// Helpers
 
+const truncateDescription = (text: string, wordLimit = 75) => {
+  const words = text.split(" ");
+  return words.length > wordLimit
+    ? words.slice(0, wordLimit).join(" ") + " ...more"
+    : text;
+};
+
+const getTrimmedFeatures = (features: string[], limit: number = 6) => {
+  if (features.length > limit) {
+    const extra = features.length - limit;
+    return [...features.slice(0, limit), `+${extra}`];
+  }
+  return features;
+};
+
+// Main Component
 export function ProductsSection1() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isInterestModalOpen, setIsInterestModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
 
+  const products = productsData.map((product: any) => ({
+    name: product.title,
+    description: product.description,
+    features: product.features,
+    price: product.price,
+    rating: product.rating,
+    users: product.users,
+    image: product.image,
+    trial_link: product.trial_link,
+    learn_more_link: product.learn_more_discription,
+  }));
+
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
-    }, 5000);
-
+    }, 7000);
     return () => clearInterval(timer);
   }, [products.length]);
 
-  const nextProject = () => {
+  const nextProduct = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % products.length);
   };
 
-  const prevProject = () => {
+  const prevProduct = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + products.length) % products.length);
   };
 
@@ -55,6 +79,7 @@ export function ProductsSection1() {
         productName={selectedProduct?.name || ""}
         productImage={selectedProduct?.image || ""}
       />
+
       <section className="bg-secondary section-padding-y border-b" id="products">
         <div className="container-padding-x container mx-auto">
         <div className="flex flex-col gap-10 md:gap-12">
@@ -69,51 +94,41 @@ export function ProductsSection1() {
             </p>
           </div>
 
-          {/* Products Carousel */}
-          <div className="relative">
-            {/* Carousel Container */}
-            <div className="overflow-hidden rounded-xl">
-              <div 
-                className="flex transition-transform duration-500 ease-in-out"
-                style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-              >
-                {products.map((product: any, index: number) => (
-                  <div key={index} className="w-full flex-shrink-0">
-                    <Card className="bg-background rounded-xl border shadow-sm mx-2">
-                      <CardContent className="flex flex-col gap-6 p-8 lg:flex-row lg:items-center lg:gap-12">
-                        {/* Product Info */}
-                        <div className="flex flex-1 flex-col gap-4 md:ml-2 md:mr-2">
-                          <div className="flex items-center gap-4">
-                            <h3 className="text-2xl font-semibold text-foreground">
-                              {product.name}
-                            </h3>
-                            <div className="flex items-center gap-1">
-                              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                              <span className="text-sm font-medium">{product.rating}</span>
+            {/* Carousel */}
+            <div className="relative">
+              <div className="overflow-hidden rounded-xl">
+                <div
+                  className="flex transition-transform duration-500 ease-in-out"
+                  style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+                >
+                  {products.map((product, index) => (
+                    <div key={index} className="w-full flex-shrink-0">
+                      <Card className="bg-background rounded-xl border shadow-sm">
+                        <CardContent className="p-4 lg:p-5 flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-8">
+                          {/* Left Side: Info */}
+                          <div className="flex-1 flex flex-col gap-4 lg:max-w-[60%]">
+                            {/* Header */}
+                            <div className="flex items-center justify-between">
+                              <h3 className="text-2xl font-semibold text-foreground">
+                                {product.name}
+                              </h3>
                             </div>
-                          </div>
-                          
-                          <p className="text-muted-foreground">
-                            {product.description}
-                          </p>
-                          
-                          {/* Features */}
-                          <div className="flex flex-wrap gap-2">
-                            {product.features.map((feature: string, featureIndex: number) => (
-                              <span 
-                                key={featureIndex}
-                                className="bg-background text-foreground px-3 py-1 rounded-full text-sm border"
-                              >
-                                {feature}
-                              </span>
-                            ))}
-                          </div>
-                          
-                          {/* Stats */}
-                          <div className="flex items-center gap-6">
+
+                            {/* Description */}
+                            <p className="text-muted-foreground leading-relaxed ml-4">
+                              {truncateDescription(product.description)}
+                            </p>
+                            {/* Stats */}
+                          <div className="flex items-center gap-6  ml-6">
                             <div className="flex items-center gap-2">
                               <Users className="h-4 w-4 text-primary" />
                               <span className="text-sm font-medium">{product.users} users</span>
+                            </div>
+                            <div className="flex items-center gap-1">
+                              <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                              <span className="text-sm font-medium">
+                                {product.rating}
+                              </span>
                             </div>
                             <div className="text-2xl font-bold text-primary">
                               {/*product.price*/}
@@ -129,7 +144,7 @@ export function ProductsSection1() {
                           </div>
                           
                           {/* CTA Buttons */}
-                          <div className="flex flex-col gap-3">
+                          <div className="flex flex-col gap-3  ml-6">
                             <div className="flex gap-3">
                               <Link href={product.trial_link} target="_blank" rel="noopener noreferrer">
                                 <Button>
@@ -146,80 +161,97 @@ export function ProductsSection1() {
                             </div>
                           </div>
                         </div>
-                        
-                        {/* Product Image */}
-                        <div className="flex-1">
-                          <div className="bg-muted rounded-lg overflow-hidden border-2">
-                            <img 
-                              src={product.image} 
-                              alt={product.name}
-                              className="w-full h-full object-fit-cover"
-                              onError={(e) => {
-                                e.currentTarget.style.display = 'none';
-                                const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
-                                if (nextElement) {
-                                  nextElement.style.display = 'flex';
-                                }
-                              }}
-                            />
-                            <div className="w-full h-full hidden items-center justify-center bg-muted">
-                              <span className="text-muted-foreground">Product Screenshot</span>
+
+                          {/* Right Side: Image & Features */}
+                          <div className="flex flex-col gap-3 w-full lg:w-[40%]">
+                            {/* Image */}
+                            <div className="rounded-md border overflow-hidden max-h-[220px]">
+                              <img
+                                src={product.image}
+                                alt={product.name}
+                                className="w-full h-full object-cover"
+                                onError={(e) => {
+                                  e.currentTarget.style.display = "none";
+                                  const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                                  if (fallback) fallback.style.display = "flex";
+                                }}
+                              />
+                              <div className="w-full h-full hidden items-center justify-center bg-muted">
+                                <span className="text-muted-foreground text-sm">
+                                  Image not available
+                                </span>
+                              </div>
+                            </div>
+
+                            {/* Features */}
+                            <div className="flex flex-wrap gap-2">
+                              {getTrimmedFeatures(product.features).map(
+                                (feature, idx) => (
+                                  <span
+                                    key={idx}
+                                    className="bg-muted text-foreground px-3 py-1 text-xs rounded-full border"
+                                  >
+                                    {feature}
+                                  </span>
+                                )
+                              )}
                             </div>
                           </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Navigation Buttons */}
+              <Button
+                variant="outline"
+                size="sm"
+                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 p-0 bg-muted backdrop-blur-sm"
+                onClick={prevProduct}
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </Button>
+
+              <Button
+                variant="outline"
+                size="sm"
+                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 p-0 bg-muted backdrop-blur-sm"
+                onClick={nextProduct}
+              >
+                <ChevronRight className="h-4 w-4" />
+              </Button>
+
+              {/* Dots */}
+              <div className="flex justify-center gap-2 mt-4">
+                {products.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentIndex(index)}
+                    className={`w-3 h-3 rounded-full transition-colors ${
+                      index === currentIndex
+                        ? "bg-primary"
+                        : "bg-background border"
+                    }`}
+                    aria-label={`Go to product ${index + 1}`}
+                  />
                 ))}
               </div>
             </div>
-            
-            {/* Navigation Buttons */}
-            <Button
-              variant="outline"
-              size="sm"
-              className="absolute left-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 p-0 bg-muted backdrop-blur-sm"
-              onClick={prevProject}
-            >
-              <ChevronLeft className="h-4 w-4" />
-            </Button>
-            
-            <Button
-              variant="outline"
-              size="sm"
-              className="absolute right-4 top-1/2 -translate-y-1/2 z-10 h-10 w-10 p-0 bg-muted backdrop-blur-sm"
-              onClick={nextProject}
-            >
-              <ChevronRight className="h-4 w-4" />
-            </Button>
 
-            {/* Carousel Indicators */}
-            <div className="flex justify-center gap-2 mt-6">
-              {products.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setCurrentIndex(index)}
-                  className={`w-3 h-3 rounded-full transition-colors ${
-                    index === currentIndex ? 'bg-primary' : 'bg-background'
-                  }`}
-                  aria-label={`Go to product ${index + 1}`}
-                />
-              ))}
+            {/* View All Products Button */}
+            <div className="flex justify-center">
+              <Link href="/products">
+                <Button variant="outline" size="lg" className="border-orange-500">
+                  View All Products
+                  <ArrowRight className="h-4 w-4" />
+                </Button>
+              </Link>
             </div>
           </div>
-
-          {/* View All Products Button */}
-          <div className="flex justify-center">
-            <Link href="/products">
-              <Button variant="outline" size="lg" className="border-orange-500">
-                View All Products
-                <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          </div>
         </div>
-      </div>
-    </section>
+      </section>
     </>
   );
 }
