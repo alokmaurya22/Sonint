@@ -1,6 +1,7 @@
 const productsData = [
     
     {
+        productId: "2025001",
         title: "Restro Sathi – Restaurant Table Booking Platform",
         subtitle: "Smart and efficient table booking system for customers and restaurant owners.",
         description: "Restro Sathi is a web-based restaurant reservation platform that connects customers with restaurants for hassle-free table bookings. Customers can easily request reservations, while restaurant owners can accept, reject, or keep them pending — improving booking accuracy by up to 85%. The platform includes a powerful admin panel and interactive dashboard for managing tables, monitoring real-time availability, and handling booking requests efficiently, reducing manual workload by 70%.",
@@ -13,6 +14,7 @@ const productsData = [
         learn_more_discription: "https://github.com/alokmaurya22/RestroSathi"
     },
     {
+        productId: "2025002",
         title: "Extrabite – A Food Donation and Redistribution Platform",
         subtitle: "Connecting surplus food providers, NGOs, and individuals to make food sharing effortless, secure, and sustainable.",
         description: "Extrabite is an intelligent web platform that bridges the gap between food donors and receivers. It helps restaurants, households, and organizations donate surplus food in real-time through a transparent and automated system. With live donation listings, OTP-based pickups, personalized dashboards, and secure role-based access, Extrabite simplifies food redistribution while promoting sustainability.The platform also includes an AI-powered recipe generator that encourages households to creatively reuse leftover ingredients, reducing food waste by up to 25%. Designed for efficiency and scale, Extrabite automates up to 80% of manual coordination through integrated geolocation and Google Maps.",
@@ -25,6 +27,7 @@ const productsData = [
         learn_more_discription: "https://github.com/alokmaurya22/extrabite-frontend"
     },
     {
+        productId: "2025003",
         title: "Social Sphere – A Modern Social Media Web Platform",
         subtitle: "Connecting people through real-time conversations, media sharing, and AI-assisted engagement.",
         description: "Social Sphere is a full-stack social media platform built to create meaningful online interactions. It enables users to share thoughts, post media, chat in real time, and explore profiles in a clean, responsive interface. The platform supports both registered and guest sessions, ensuring inclusivity and seamless access for all users. An integrated in-app AI assistant named “Soli” helps users with onboarding, navigation, and feature discovery — improving engagement and retention for over 80% of new users. The system was tested by 600+ users and successfully managed 5,000+ posts and messages without downtime across multiple devices.",

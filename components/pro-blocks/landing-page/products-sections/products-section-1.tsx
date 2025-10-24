@@ -1,5 +1,5 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import {
@@ -41,6 +41,7 @@ export function ProductsSection1() {
 
   const products = productsData.map((product: any) => ({
     name: product.title,
+    productId: product.id,
     description: product.description,
     features: product.features,
     price: product.price,
@@ -166,6 +167,7 @@ export function ProductsSection1() {
                           <div className="flex flex-col gap-3 w-full lg:w-[40%]">
                             {/* Image */}
                             <div className="rounded-md border overflow-hidden max-h-[220px]">
+                              
                               <img
                                 src={product.image}
                                 alt={product.name}

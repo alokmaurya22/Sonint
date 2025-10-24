@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { InterestModal } from "@/components/interest-modal";
@@ -10,6 +11,7 @@ import Link from "next/link";
 
 interface ProductCardProps {
   product: {
+    productId: string;
     title: string;
     subtitle: string;
     description: string;
@@ -24,8 +26,13 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
+  const router = useRouter();
   const [isInterestModalOpen, setIsInterestModalOpen] = useState(false);
   const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+
+  const openProductModal = () => {
+    router.push(`/product/info/${product.productId}`);
+  };
 
   return (
     <>
@@ -50,7 +57,7 @@ export function ProductCard({ product }: ProductCardProps) {
         {/* Product Image */}
         <div 
           className="bg-muted rounded-lg h-40 sm:h-48 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity group relative"
-          onClick={() => setIsDetailsModalOpen(true)}
+          onClick={openProductModal}
         >
           <img 
             src={product.image} 
@@ -87,14 +94,14 @@ export function ProductCard({ product }: ProductCardProps) {
           
           <h3 
             className="text-lg sm:text-xl font-semibold text-foreground line-clamp-2 cursor-pointer hover:text-primary transition-colors"
-            onClick={() => setIsDetailsModalOpen(true)}
+            onClick={openProductModal}
           >
             {product.title}
           </h3>
           
           <p 
             className="text-muted-foreground text-xs sm:text-sm line-clamp-3 cursor-pointer hover:text-foreground transition-colors"
-            onClick={() => setIsDetailsModalOpen(true)}
+            onClick={openProductModal}
           >
             {product.description}
           </p>
@@ -141,7 +148,7 @@ export function ProductCard({ product }: ProductCardProps) {
               size="sm" 
               variant="outline" 
               className="px-2 sm:px-3"
-              onClick={() => setIsDetailsModalOpen(true)}
+              onClick={openProductModal}
             >
               Learn More
             </Button>
