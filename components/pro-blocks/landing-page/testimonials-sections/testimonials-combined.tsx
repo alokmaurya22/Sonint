@@ -77,7 +77,7 @@ export function TestimonialsCombined() {
                 {testimonials.map((testimonial, index) => (
                   <div key={index} className="w-full flex-shrink-0 px-1 sm:px-2 md:px-3">
                     <Card className="bg-background rounded-xl border shadow-sm mx-auto w-full max-w-lg sm:max-w-xl md:max-w-2xl">
-                      <CardContent className="p-4 sm:p-5 md:p-6 lg:p-8">
+                      <CardContent className="p-4 sm:p-5">
                         <div className="flex flex-col gap-4 sm:gap-5 md:gap-6 text-center">
                           <blockquote className="text-foreground text-sm sm:text-base md:text-lg lg:text-lg leading-relaxed">
                             "{testimonial.quote}"
