@@ -1,7 +1,4 @@
-"use client";
-
 import { Bot, Plug, BarChart3, TextSearch } from "lucide-react";
-import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
 
 export function FeatureSection9() {
   return (

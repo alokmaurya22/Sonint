@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { InterestModal } from "@/components/interest-modal";
 import { ProductDetailsModal } from "@/components/product-details-modal";
 import { ExternalLink, Star, Users, Heart, Eye } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 interface ProductCardProps {
@@ -29,6 +30,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const router = useRouter();
   const [isInterestModalOpen, setIsInterestModalOpen] = useState(false);
   const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
+  const [imageError, setImageError] = useState(false);
 
   const openProductModal = () => {
     router.push(`/product/info/${product.productId}`);
@@ -59,21 +61,20 @@ export function ProductCard({ product }: ProductCardProps) {
           className="bg-muted rounded-lg h-40 sm:h-48 overflow-hidden cursor-pointer hover:opacity-90 transition-opacity group relative"
           onClick={openProductModal}
         >
-          <img 
-            src={product.image} 
-            alt={product.title}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-              const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
-              if (nextElement) {
-                nextElement.style.display = 'flex';
-              }
-            }}
-          />
-          <div className="w-full h-full hidden items-center justify-center bg-muted">
-            <span className="text-muted-foreground text-xs sm:text-sm">Product Screenshot</span>
-          </div>
+          {imageError ? (
+            <div className="w-full h-full flex items-center justify-center bg-muted">
+              <span className="text-muted-foreground text-xs sm:text-sm">Product Screenshot</span>
+            </div>
+          ) : (
+            <Image
+              src={product.image}
+              alt={product.title}
+              fill
+              sizes="(min-width: 1024px) 33vw, 100vw"
+              className="object-cover"
+              onError={() => setImageError(true)}
+            />
+          )}
           {/* Hover overlay */}
           <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
             <Eye className="h-8 w-8 text-white" />

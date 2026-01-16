@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { X, CheckCircle, Heart } from "lucide-react";
+import Image from "next/image";
 
 interface InterestModalProps {
     isOpen: boolean;
@@ -16,6 +17,7 @@ interface InterestModalProps {
 }
 
 export function InterestModal({ isOpen, onClose, productName, productImage }: InterestModalProps) {
+    const [imageError, setImageError] = useState(false);
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -25,6 +27,10 @@ export function InterestModal({ isOpen, onClose, productName, productImage }: In
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
+
+    useEffect(() => {
+        setImageError(false);
+    }, [productImage]);
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
@@ -127,22 +133,21 @@ export function InterestModal({ isOpen, onClose, productName, productImage }: In
                                 <Label className="text-sm font-medium mb-1">Product Interest</Label>
                                 <p className="text-sm text-muted-foreground font-medium text-orange-500">{productName}</p>
                                 </div>
-                                <div className="w-[90px] h-[45px] rounded-md overflow-hidden flex items-center justify-center mr-4">
-                                <img
-                                    src={productImage}
-                                    alt={productName}
-                                    className="w-full h-full object-contain"
-                                    onError={(e) => {
-                                    e.currentTarget.style.display = "none";
-                                    const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
-                                    if (nextElement) {
-                                        nextElement.style.display = "flex";
-                                    }
-                                    }}
-                                />
-                                <div className="hidden w-full h-full items-center justify-center">
-                                    <span className="text-xs text-muted-foreground">Image</span>
-                                </div>
+                                <div className="w-[90px] h-[45px] rounded-md overflow-hidden flex items-center justify-center mr-4 relative">
+                                    {productImage && !imageError ? (
+                                        <Image
+                                            src={productImage}
+                                            alt={productName}
+                                            fill
+                                            sizes="90px"
+                                            className="object-contain"
+                                            onError={() => setImageError(true)}
+                                        />
+                                    ) : (
+                                        <div className="w-full h-full flex items-center justify-center">
+                                            <span className="text-xs text-muted-foreground">Image</span>
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

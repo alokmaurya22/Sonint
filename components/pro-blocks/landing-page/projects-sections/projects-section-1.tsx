@@ -3,12 +3,14 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ExternalLink, Github, ChevronLeft, ChevronRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import projectsData from "../../../../app/projects/projectsData.js";
 
 export function ProjectsSection1() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
   
   // Use all projects for the carousel
   const projects = projectsData.map(project => ({
@@ -34,6 +36,10 @@ export function ProjectsSection1() {
 
   const prevProject = () => {
     setCurrentIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
+  };
+
+  const handleImageError = (index: number) => {
+    setImageErrors((prev) => ({ ...prev, [index]: true }));
   };
 
   return (
@@ -105,21 +111,21 @@ export function ProjectsSection1() {
                         {/* Project Image */}
                         <div className="flex-1">
                           <div className="bg-muted rounded-lg overflow-hidden border-2">
-                            <img 
-                              src={project.image} 
-                              alt={project.title}
-                              className="w-full h-full object-fit-cover"
-                              onError={(e) => {
-                                e.currentTarget.style.display = 'none';
-                                const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
-                                if (nextElement) {
-                                  nextElement.style.display = 'flex';
-                                }
-                              }}
-                            />
-                            <div className="w-full h-full hidden items-center justify-center bg-muted">
-                              <span className="text-muted-foreground">Project Screenshot</span>
-                            </div>
+                            {imageErrors[index] ? (
+                              <div className="w-full h-64 md:h-80 flex items-center justify-center bg-muted">
+                                <span className="text-muted-foreground">Project Screenshot</span>
+                              </div>
+                            ) : (
+                              <Image
+                                src={project.image}
+                                alt={project.title}
+                                width={960}
+                                height={540}
+                                sizes="(min-width: 1024px) 40vw, 100vw"
+                                className="h-64 w-full object-cover md:h-80"
+                                onError={() => handleImageError(index)}
+                              />
+                            )}
                           </div>
                         </div>
                       </CardContent>

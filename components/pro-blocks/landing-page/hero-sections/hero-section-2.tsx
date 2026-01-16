@@ -1,8 +1,5 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import { Check, ArrowRight } from "lucide-react";
-import { AspectRatio } from "@/components/ui/aspect-ratio";
 import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
 import Image from "next/image";
 import Link from "next/link";
@@ -76,15 +73,17 @@ export function HeroSection2() {
 
         {/* Right Column */}
         <div className="w-full flex-1">
-          <AspectRatio ratio={1 / 1}>
+          <div className="relative w-full pb-[100%]">
             <Image
-              src="/Hero.png"
+              src="/Hero.webp"
               alt="Hero visual"
               fill
               priority
-              className="h-full w-full rounded-xl object-cover"
+              fetchPriority="high"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+              className="rounded-xl object-cover"
             />
-          </AspectRatio>
+          </div>
         </div>
       </div>
     </section>

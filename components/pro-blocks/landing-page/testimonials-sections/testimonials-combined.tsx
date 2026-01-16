@@ -14,7 +14,7 @@ export function TestimonialsCombined() {
       quote: "Sonint delivered our web application faster than expected. Their attention to detail and clean code practices impressed our entire team.",
       authorName: "Harsh Agrawal",
       authorRole: "Founder Tip Top Dresses",
-      avatarSrc: "/Testimonial-user/harsh-agrawal.jpg"
+      avatarSrc: "/Testimonial-user/harsh-agrawal.webp"
     },
     {
       quote: "Working with Sonint was a great experience. They understood our requirements perfectly and delivered exactly what we needed for our growing business.",
@@ -26,7 +26,7 @@ export function TestimonialsCombined() {
       quote: "The team's expertise in modern technologies and their commitment to quality made our project a huge success. Highly recommended!",
       authorName: "Priya Sharma",
       authorRole: "CFO at Ground work",
-      avatarSrc: "/Testimonial-user/fml-user.jpg"
+      avatarSrc: "/Testimonial-user/fml-user.webp"
     },
     {
       quote: "Excellent communication and delivery. They turned our complex requirements into a simple, elegant solution that our users love.",

@@ -1,8 +1,5 @@
-"use client";
-
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
-import { Tagline } from "@/components/pro-blocks/landing-page/tagline";
 
 export function BentoGrid6() {
   return (
@@ -28,17 +25,23 @@ export function BentoGrid6() {
           {/* Wide Feature Card - Top Left */}
           <Card className="bg-white gap-0 overflow-hidden rounded-xl border-none p-0 shadow-none lg:col-span-2">
             <Image
-              src="/ai-meeting-notes.png"
+              src="/ai-meeting-notes.webp"
               alt="AI Meeting Notes"
               width={813}
               height={332}
+              sizes="(min-width: 1024px) 66vw, (min-width: 768px) 100vw, 100vw"
+              loading="lazy"
+              decoding="async"
               className="hidden h-auto w-full object-cover md:block md:h-[332px]"
             />
             <Image
-              src="/ai-meeting-notes_mobile.png"
+              src="/ai-meeting-notes_mobile.webp"
               alt="AI Meeting Notes"
               width={480}
               height={332}
+              sizes="(min-width: 768px) 0px, 100vw"
+              loading="lazy"
+              decoding="async"
               className="block h-auto w-full md:hidden"
             />
             <CardContent className="flex flex-col gap-2 p-6">
@@ -53,10 +56,13 @@ export function BentoGrid6() {
           {/* Regular Feature Card - Top Right */}
           <Card className="bg-white gap-0 overflow-hidden rounded-xl border-none p-0 shadow-none lg:col-span-1">
             <Image
-              src="/universal-search.png"
+              src="/universal-search.webp"
               alt="Universal Search"
               width={480}
               height={332}
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 100vw, 100vw"
+              loading="lazy"
+              decoding="async"
               className="h-auto w-full object-cover md:h-[332px]"
             />
             <CardContent className="flex flex-col gap-2 p-6">
@@ -71,10 +77,13 @@ export function BentoGrid6() {
           {/* Regular Feature Card - Bottom Left */}
           <Card className="bg-white gap-0 overflow-hidden rounded-xl border-none p-0 shadow-none lg:col-span-1">
             <Image
-              src="/smart-tags.png"
+              src="/smart-tags.webp"
               alt="AI Meeting Notes"
               width={480}
               height={332}
+              sizes="(min-width: 1024px) 33vw, (min-width: 768px) 100vw, 100vw"
+              loading="lazy"
+              decoding="async"
               className="h-auto w-full object-cover md:h-[332px]"
             />
             <CardContent className="flex flex-col gap-2 p-6">
@@ -89,17 +98,23 @@ export function BentoGrid6() {
           {/* Wide Feature Card - Bottom Right */}
           <Card className="bg-white gap-0 overflow-hidden rounded-xl border-none p-0 shadow-none lg:col-span-2">
             <Image
-              src="/team-insights.png"
+              src="/team-insights.webp"
               alt="Team Insights"
               width={813}
               height={332}
+              sizes="(min-width: 1024px) 66vw, (min-width: 768px) 100vw, 100vw"
+              loading="lazy"
+              decoding="async"
               className="hidden h-[332px] w-full object-cover md:block"
             />
             <Image
-              src="/team-insights_mobile.png"
+              src="/team-insights_mobile.webp"
               alt="Team Insights"
               width={480}
               height={332}
+              sizes="(min-width: 768px) 0px, 100vw"
+              loading="lazy"
+              decoding="async"
               className="block h-auto w-full object-cover md:hidden md:h-[332px]"
             />
             <CardContent className="flex flex-col gap-2 p-6">

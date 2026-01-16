@@ -1,9 +1,11 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { Star, Users, X, Globe, Heart } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 interface ProductDetailsModalProps {
@@ -31,6 +33,12 @@ export function ProductDetailsModal({
   product,
   onShowInterest,
 }: ProductDetailsModalProps) {
+  const [imageError, setImageError] = useState(false);
+
+  useEffect(() => {
+    setImageError(false);
+  }, [product.image]);
+
   if (!isOpen) return null;
 
   return (
@@ -65,20 +73,21 @@ export function ProductDetailsModal({
         {/* ===== Scrollable Content ===== */}
         <div className="overflow-y-auto p-4 sm:p-6 space-y-6">
           {/* Product Image */}
-          <div className="bg-muted rounded-lg h-48 sm:h-64 lg:h-80 overflow-hidden">
-            <img
-              src={product.image || ""}
-              alt={product.title || "Product"}
-              className="w-full h-full object-cover"
-              onError={(e) => {
-                e.currentTarget.style.display = "none";
-                const next = e.currentTarget.nextElementSibling as HTMLElement;
-                if (next) next.style.display = "flex";
-              }}
-            />
-            <div className="w-full h-full hidden items-center justify-center bg-muted text-muted-foreground">
-              Product Screenshot
-            </div>
+          <div className="bg-muted rounded-lg h-48 sm:h-64 lg:h-80 overflow-hidden relative">
+            {product.image && !imageError ? (
+              <Image
+                src={product.image}
+                alt={product.title || "Product"}
+                fill
+                sizes="(min-width: 1024px) 60vw, 100vw"
+                className="object-cover"
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center bg-muted text-muted-foreground">
+                Product Screenshot
+              </div>
+            )}
           </div>
 
           {/* Rating & users */}

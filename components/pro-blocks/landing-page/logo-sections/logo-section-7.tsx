@@ -1,5 +1,3 @@
-"use client";
-
 import { SirMusizLogo } from "@/components/pro-blocks/organization-logos/sirmusiz-logo";
 import { TipTopLogo } from "@/components/pro-blocks/organization-logos/tiptop-logo";
 import { cksolutionsLogo } from "@/components/pro-blocks/organization-logos/ck-solutions-logo";
@@ -79,21 +77,6 @@ export function LogoSection10() {
           </div>
         </div>
       </div>
-      <style jsx global>{`
-        @keyframes infinite-scroll {
-          from {
-            transform: translateX(0);
-          }
-          to {
-            transform: translateX(calc(-50%));
-          }
-        }
-
-        .animate-infinite-scroll {
-          animation: infinite-scroll 20s linear infinite;
-          will-change: transform;
-        }
-      `}</style>
     </section>
   );
 }

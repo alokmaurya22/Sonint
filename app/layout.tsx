@@ -165,7 +165,7 @@ export default function RootLayout({
     name: 'Sonint Technology',
     alternateName: 'Sonint',
     url: 'https://sonint.io',
-    logo: 'https://sonint.io/sonintLogo.png',
+    logo: 'https://sonint.io/sonintLogo.webp',
     description: 'Leading software development company specializing in React web applications, Spring Boot APIs, custom ERP systems, cloud infrastructure, and AI integration.',
     foundingDate: '2024',
     founders: [

@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 interface ProjectCardProps {
@@ -19,27 +21,27 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   const technologies = project.techStack.split(', ').map(tech => tech.trim());
+  const [imageError, setImageError] = useState(false);
 
   return (
     <Card className="bg-secondary rounded-xl border shadow-sm hover:shadow-md transition-shadow">
       <CardContent className="flex flex-col gap-4 sm:gap-6 p-4 sm:p-6">
         {/* Project Image */}
-        <div className="bg-muted rounded-lg h-40 sm:h-48 overflow-hidden">
-          <img 
-            src={project.image} 
-            alt={project.title}
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              e.currentTarget.style.display = 'none';
-              const nextElement = e.currentTarget.nextElementSibling as HTMLElement;
-              if (nextElement) {
-                nextElement.style.display = 'flex';
-              }
-            }}
-          />
-          <div className="w-full h-full hidden items-center justify-center bg-muted">
-            <span className="text-muted-foreground text-xs sm:text-sm">Project Screenshot</span>
-          </div>
+        <div className="bg-muted rounded-lg h-40 sm:h-48 overflow-hidden relative">
+          {imageError ? (
+            <div className="w-full h-full flex items-center justify-center bg-muted">
+              <span className="text-muted-foreground text-xs sm:text-sm">Project Screenshot</span>
+            </div>
+          ) : (
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              sizes="(min-width: 1024px) 33vw, 100vw"
+              className="object-cover"
+              onError={() => setImageError(true)}
+            />
+          )}
         </div>
         
         {/* Project Header */}

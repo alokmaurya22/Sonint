@@ -4,7 +4,7 @@ export const siteConfig = {
   name: 'Sonint Technology',
   description: 'Sonint Technology builds custom software, AI automation, and cloud-native solutions from India for global clients. Rooted in India, engineered for the world.',
   url: 'https://sonint.io',
-  ogImage: '/og.png',
+  ogImage: '/og.webp',
   creator: '@soninttech',
   keywords: [
     // Primary Keywords (High Relevance)
@@ -134,7 +134,7 @@ export const organizationSchema = {
   name: 'Sonint Technology',
   alternateName: 'Sonint',
   url: 'https://sonint.io',
-  logo: 'https://sonint.io/sonintLogo.png',
+  logo: 'https://sonint.io/sonintLogo.webp',
   description: siteConfig.description,
   foundingDate: '2024',
   address: {

@@ -11,6 +11,7 @@ import {
   Heart,
   Eye,
 } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { InterestModal } from "@/components/interest-modal";
@@ -40,6 +41,7 @@ export function ProductsSection1() {
   const [isInterestModalOpen, setIsInterestModalOpen] = useState(false);
   const [isDetailsModalOpen, setIsDetailsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState<any>(null);
+  const [imageErrors, setImageErrors] = useState<Record<number, boolean>>({});
 
   const products = productsData.map((product: any) => ({
     name: product.title,
@@ -80,6 +82,10 @@ export function ProductsSection1() {
   const handleOpenDetails = (product: any) => {
     setSelectedProduct(product);
     setIsDetailsModalOpen(true);
+  };
+
+  const handleImageError = (index: number) => {
+    setImageErrors((prev) => ({ ...prev, [index]: true }));
   };
 
   return (
@@ -204,24 +210,25 @@ export function ProductsSection1() {
                           <div className="flex flex-col gap-3 w-full lg:w-[40%]">
                             {/* Image */}
                             <div
-                              className="rounded-md border overflow-hidden max-h-[220px] cursor-pointer hover:opacity-90 transition-opacity group relative"
+                              className="rounded-md border overflow-hidden h-[220px] cursor-pointer hover:opacity-90 transition-opacity group relative"
                               onClick={() => handleOpenDetails(product)}
                             >
-                              <img
-                                src={product.image}
-                                alt={product.name}
-                                className="w-full h-full object-cover"
-                                onError={(e) => {
-                                  e.currentTarget.style.display = "none";
-                                  const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                                  if (fallback) fallback.style.display = "flex";
-                                }}
-                              />
-                              <div className="w-full h-full hidden items-center justify-center bg-muted">
-                                <span className="text-muted-foreground text-sm">
-                                  Image not available
-                                </span>
-                              </div>
+                              {imageErrors[index] ? (
+                                <div className="w-full h-full flex items-center justify-center bg-muted">
+                                  <span className="text-muted-foreground text-sm">
+                                    Image not available
+                                  </span>
+                                </div>
+                              ) : (
+                                <Image
+                                  src={product.image}
+                                  alt={product.name}
+                                  fill
+                                  sizes="(min-width: 1024px) 40vw, 100vw"
+                                  className="object-cover"
+                                  onError={() => handleImageError(index)}
+                                />
+                              )}
                               {/* Hover overlay */}
                               <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                                 <Eye className="h-8 w-8 text-white" />

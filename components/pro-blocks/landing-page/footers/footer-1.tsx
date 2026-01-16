@@ -1,8 +1,5 @@
-"use client";
-
 import { Logo } from "@/components/pro-blocks/logo";
 import Link from "next/link";
-import { Separator } from "@/components/ui/separator";
 
 export function Footer1() {
   return (
@@ -76,7 +73,7 @@ export function Footer1() {
         </div>
 
         {/* Section Divider */}
-        <Separator role="presentation" />
+        <div aria-hidden="true" className="h-px w-full bg-border" />
 
         {/* Bottom Section */}
         <div className="flex w-full flex-col-reverse items-center gap-4 sm:gap-6 md:gap-8 lg:gap-6 text-sm lg:flex-row lg:justify-between">
