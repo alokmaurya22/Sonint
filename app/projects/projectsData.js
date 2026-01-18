@@ -61,6 +61,20 @@ const projectsData = [
         techStack: "React.js, Tailwind CSS, Firebase, Firestore, React Router",
         liveLink: "https://social-sphere-self.vercel.app/",
         githubLink: "https://github.com/alokmaurya22/SocialSphere"
+    },
+    
+    {
+        title: "Avatar Play - Premium Game Distribution Platform",
+        subtitle: "Epic-Style Hero Carousel & Universal Video Support",
+        description: "A high-performance gaming storefront built with Next.js 16 and Tailwind CSS v4. Features include an interactive hero section, real-time smart search, and a secure admin dashboard integrated with Cloudinary and Firebase.",
+        image: "/product-img/pro-avatar-play-v2.webp",
+        features: ["Epic-Style Hero Carousel (Auto-rotating)", "Universal Video Support (Direct/YouTube/Shorts)", "Firebase Auth & Firestore Database", "Cloudinary Media Optimization", "AI-Powered Content Moderation (NSFWJS)", "Real-time Data Visualization (Chart.js)", "Fully Responsive UI (Tailwind v4)"],
+        price: "Free / Open Source",
+        techStack:"",
+        rating: 5.0,
+        users: "Developer Ready",
+        liveLink: "https://avatarplay.in/",
+        githubLink: "https://github.com/Akhilesh10gupta/Avatar-store"
     }
 ];
 
