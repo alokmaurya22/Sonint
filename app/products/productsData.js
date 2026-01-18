@@ -38,6 +38,19 @@ const productsData = [
         users: "120+",
         trial_link: "https://social-sphere-self.vercel.app/",
         learn_more_discription: "https://github.com/alokmaurya22/SocialSphere"
+    },
+    {
+        productId: "2025004",
+        title: "Avatar Play - Premium Game Distribution Platform",
+        subtitle: "Epic-Style Hero Carousel & Universal Video Support",
+        description: "A high-performance gaming storefront built with Next.js 16 and Tailwind CSS v4. Features include an interactive hero section, real-time smart search, and a secure admin dashboard integrated with Cloudinary and Firebase.",
+        image: "/product-img/pro-avatar-play-v2.webp",
+        features: ["Epic-Style Hero Carousel (Auto-rotating)", "Universal Video Support (Direct/YouTube/Shorts)", "Firebase Auth & Firestore Database", "Cloudinary Media Optimization", "AI-Powered Content Moderation (NSFWJS)", "Real-time Data Visualization (Chart.js)", "Fully Responsive UI (Tailwind v4)"],
+        price: "Free / Open Source",
+        rating: 5.0,
+        users: "Developer Ready",
+        trial_link: "https://avatarplay.in/",
+        learn_more_discription: "https://github.com/Akhilesh10gupta/Avatar-store"
     }
 ];
 
